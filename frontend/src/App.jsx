@@ -6,6 +6,7 @@ import SignUpPage from './assets/pages/SignUpPage';
 import AboutPage from './assets/pages/AboutPage';
 import Header from './assets/pages/Header';
 import ProfilePage from './assets/pages/ProfilePage';
+import PrivateRoute from './components/privateRoute';
 
 export default function App() {
   return (
@@ -16,9 +17,14 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/sign-in" element={<SignInPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
+       
         <Route path="/about" element={<AboutPage />} />
       
+         {/* Protected routes */}
+         <Route element={<PrivateRoute />}>
+        <Route path="/profile" element={<ProfilePage />} />
+        </Route>
+        
       </Routes>
     </BrowserRouter>
   );

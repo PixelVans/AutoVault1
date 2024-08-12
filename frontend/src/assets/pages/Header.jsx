@@ -7,8 +7,10 @@ import { useSelector } from 'react-redux';
 
 export default function Header() {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
+  const userData = useSelector((state) => state.user.userData);
+
   return (
-      <header className='bg-gray-100 p-[15px] sm:p-5'>
+      <header className='bg-gray-100 p-[13px] sm:p-4'>
           <div className='flex justify-between sm:max-w-[1300px] mx-auto'>
           <Link to='/'>
               <h1 className='font-bold text-[17px] sm:text-[22px] text-center '>AutoVault</h1>
@@ -21,7 +23,7 @@ export default function Header() {
                   <button className='mr-2 text-gray-500'>    <FaSearch /></button>
               </form>
 
-              <div className='flex gap-2 sm:gap-6'>
+              <div className='flex gap-2 sm:gap-6 items-center'>
                   <Link to='/'>
                       <h1 className='hidden sm:inline-block'>Home</h1>
                   </Link>
@@ -32,7 +34,7 @@ export default function Header() {
           
                   
           {isAuthenticated ? (<Link to='profile'>
-                   <h1 className=''>Profile</h1>
+                   <img className='rounded-full h-[40px] w-[40px] object-cover ' src={userData.avatar} />
                   </Link>) : (<Link to='sign-in'>
                    <h1 className=''>Sign In</h1>
                   </Link>) }
