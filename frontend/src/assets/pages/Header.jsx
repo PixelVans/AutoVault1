@@ -1,11 +1,12 @@
 import React from 'react'
 import { FaSearch } from 'react-icons/fa';
 import {Link} from 'react-router-dom'
-
+import { useSelector } from 'react-redux';
 
 
 
 export default function Header() {
+  const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
   return (
       <header className='bg-gray-100 p-[15px] sm:p-5'>
           <div className='flex justify-between sm:max-w-[1300px] mx-auto'>
@@ -27,10 +28,15 @@ export default function Header() {
                   <Link to='about'>
                     <h1 className='hidden sm:inline-block'>About</h1>
                   </Link>
-
-                  <Link to='sign-in'>
+                   
+          
+                  
+          {isAuthenticated ? (<Link to='profile'>
+                   <h1 className=''>Profile</h1>
+                  </Link>) : (<Link to='sign-in'>
                    <h1 className=''>Sign In</h1>
-                  </Link>
+                  </Link>) }
+                  
             
                
               </div>
