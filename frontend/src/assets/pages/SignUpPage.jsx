@@ -1,10 +1,60 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import {  React,useState } from 'react'
+import {Link,useNavigate} from 'react-router-dom'
 
 
 
 
 export default function SignUpPage() {
+  const [formData, setFormData] = useState({});
+  const [loading, setloading] = useState(false);
+  const navigate = useNavigate();
+
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    })
+
+  }
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setloading(true)
+    
+    
+    try {
+      e.preventDefault();
+   setloading(true)
+   const res = await fetch('/auth/user/sign-up', {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json',
+     },
+     body: JSON.stringify(formData)
+   })
+   const data = await res.json();
+   if (data.success === false) {
+     
+     setloading(false);
+     return;
+   }
+   setloading(false)
+     
+     navigate('/sign-in'); 
+   }
+   
+   catch (error) {
+    
+     setloading(false);
+     
+}
+
+  }
+  
+
+
   return (
     
     <div
@@ -13,26 +63,39 @@ export default function SignUpPage() {
     mt-12 rounded-lg shadow-md pb-12'
 >
     <h1 className='text-center mt-5 font-bold text-2xl'>Sign Up</h1>
-<form className='text-center mt-5'>
+      <form onSubmit={handleSubmit}
+        className='text-center mt-5'>
         <input
-            className='bg-slate-50 mt-5 p-3 w-[300px] sm:w-[330px] rounded-lg focus:outline-gray-400'
+          required
+          onChange={handleChange}
+          id='username'
+          className='bg-slate-50 mt-5 p-3 w-[300px] sm:w-[330px] 
+            rounded-lg focus:outline-gray-400'
             type="text"
             placeholder='Enter username' />
         <input
-            className='bg-slate-50 mt-3 p-3 w-[300px] sm:w-[330px] rounded-lg focus:outline-gray-400'
-            type="text"
+               required
+          onChange={handleChange}
+          className='bg-slate-50 mt-3 p-3 w-[300px] sm:w-[330px]
+             rounded-lg focus:outline-gray-400'
+          type="text"
+          id='email'
             placeholder='Enter email' />
         <input
-            className='bg-slate-50 mt-3 p-3 w-[300px] sm:w-[330px] rounded-lg focus:outline-gray-400'
-            type="text"
+               required
+          onChange={handleChange}
+          className='bg-slate-50 mt-3 p-3 w-[300px] sm:w-[330px] 
+            rounded-lg focus:outline-gray-400'
+          type="text"
+          id='password'
             placeholder='Enter password' />
         
         <button
             className="bg-green-800 w-[300px] sm:w-[330px]
      text-white p-2 mt-6 text-center rounded-lg hover:opacity-90"
-  >
-    Sign Up
-  </button>
+        >  { loading ? 'loading..': 'Sign Up'}</button>
+    
+ 
     
 </form>
 <p className='mx-auto mt-4'>Already have an account?</p>
