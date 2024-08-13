@@ -34,7 +34,7 @@ export default function Header() {
           
                   
           {isAuthenticated ? (<Link to='profile'>
-                   <img className='rounded-full h-[40px] w-[40px] object-cover ' src={userData.avatar} />
+                   <img className='rounded-full h-[30px] w-[30px] object-cover ' src={userData.avatar} />
                   </Link>) : (<Link to='sign-in'>
                    <h1 className=''>Sign In</h1>
                   </Link>) }
