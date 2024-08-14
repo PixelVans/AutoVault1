@@ -10,7 +10,7 @@ export default function Header() {
   const userData = useSelector((state) => state.user.userData);
 
   return (
-      <header className='bg-gray-100 p-[13px] sm:p-4'>
+      <header className='bg-gray-100 p-[13px] sm:p-4 shadow-md'>
           <div className='flex justify-between sm:max-w-[1300px] mx-auto'>
           <Link to='/'>
               <h1 className='font-bold text-[17px] sm:text-[22px] text-center '>AutoVault</h1>
