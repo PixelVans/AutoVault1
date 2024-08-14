@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
  import { useNavigate } from 'react-router-dom'
  import { useDispatch } from 'react-redux';
 import { loggedIn } from '../../../redux/userSlice';
+import GoogleSignUp from '../../components/googleSignUp';
 
 
 
@@ -10,6 +11,7 @@ import { loggedIn } from '../../../redux/userSlice';
 export default function SignInPage() {
   const [formData, setFormData] = useState({})
   const [loading, setLoading] = useState(false)
+  const [signInError, setSignInError] = useState(false)
   const navigate = useNavigate()
   const dispatch = useDispatch();
 
@@ -42,6 +44,7 @@ const handleChange = (e) => {
     
   if (data.success === false) {
     setLoading(false)
+    setSignInError(data.message || 'Sign in failed. Please try again.');
     return
   }
      setLoading(false)
@@ -49,7 +52,8 @@ const handleChange = (e) => {
    navigate('/')
      
    }  catch (error) {
-    setLoading(false)
+     setLoading(false)
+     setSignInError('Sign in failed. Please try again.');
     }
   
   }
@@ -60,7 +64,9 @@ const handleChange = (e) => {
            mx-auto bg-white
           mt-12 rounded-lg shadow-md pb-12'
       >
-          <h1 className='text-center mt-5 font-bold text-2xl'>Sign In</h1>
+      <h1 className='text-center mt-5 font-bold text-2xl'>Sign In</h1>
+      {signInError && (<p className='text-center text-red-500 mt-2'>{ signInError}</p>)}
+
       <form
         onSubmit={handleSubmit}
         className='text-center mt-5'>
@@ -83,13 +89,7 @@ const handleChange = (e) => {
         >
           {loading ? 'Loading.. ' : 'SIGN IN'}
         </button>
-        <button
-          type='button'
-                  className="bg-red-800 w-[300px] sm:w-[330px]
-           text-white p-2 mt-2 text-center rounded-lg hover:opacity-90"
-        >
-          Continue with Google
-        </button>
+       <GoogleSignUp/>
     </form>
     <p className='mx-auto mt-4'>Dont have an account?</p>
 

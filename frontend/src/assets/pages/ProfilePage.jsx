@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import {  React,useState ,useRef,useEffect} from 'react'
 import {Link,useNavigate} from 'react-router-dom'
 import { app } from '../../fireBase'; 
+import { loggedIn,loggedOut } from '../../../redux/userSlice';
 
 import {getStorage, ref,uploadBytesResumable,getDownloadURL} from 'firebase/storage'
 
@@ -10,15 +11,24 @@ import {getStorage, ref,uploadBytesResumable,getDownloadURL} from 'firebase/stor
 
 export default function ProfilePage() {
   const [formData, setFormData] = useState({});
-  
+  const dispatch = useDispatch()
   const [loading, setloading] = useState(false);
   const [file, setFile] = useState(undefined)
   const navigate = useNavigate();
   const userData = useSelector(state => state.user.userData);
   const [uploadProgress, setUploadProgress] = useState(0); 
   const [fileUploadError, setFileUploadError] = useState(false)
+  const [signOutError, setSignOutError] = useState(false)
   const [updateError, setUpdateError] = useState(false)
   const fileRef = useRef(null)
+
+
+
+
+
+
+
+
 
   const handleChange = (e) => {
     setFormData({
@@ -27,6 +37,18 @@ export default function ProfilePage() {
     })
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -103,12 +125,14 @@ export default function ProfilePage() {
      body: JSON.stringify(formData)
    })
    const data = await res.json();
-   if (data.success === false) {
-     
+      if (data.success === false) {
+       
+     setUpdateError(data.message)
      setloading(false);
      
      return;
-   }
+      }
+      dispatch(loggedIn(data))
    setloading(false)
      
      navigate('/'); 
@@ -117,7 +141,7 @@ export default function ProfilePage() {
    catch (error) {
     
      setloading(false);
-     const errorMessage = error.message || 'An unexpected error occurred. Please try again.';
+     const errorMessage = 'An unexpected error occurred. Please try again.';
     setUpdateError(errorMessage);
 }
 
@@ -125,6 +149,60 @@ export default function ProfilePage() {
   
 
 
+
+
+
+
+
+
+  const handleSignoutUser = async () => {
+    try {
+      setSignOutError(false)
+      const res = await fetch(`/auth/user/sign-out/`)
+      const data = await res.json();
+      if (data.success === false) {
+        setSignOutError(data.message)
+        return;
+      }
+      dispatch(loggedOut())
+      setSignOutError(false)
+    
+
+    } catch (error) {
+      setSignOutError('Network error! please try again later')
+    }
+  }
+
+
+
+
+
+
+
+
+
+ //HandleDelete User
+ const handleDeleteUser = async () => {
+  try { 
+   setSignOutError(false)
+    const res = await fetch(`/auth/user/delete/${userData._id}`, {
+      method: 'DELETE',
+      
+    });
+    const data = await res.json();
+    if (data.success === false) {
+        setSignOutError(data.message)
+        return;
+      }
+    
+    dispatch(loggedOut())
+    setSignOutError(false)
+    
+
+  } catch (error) {
+   setSignOutError('Cannot delete user! Please try again later')
+}
+}
 
 
 
@@ -157,24 +235,32 @@ export default function ProfilePage() {
 
       
 
-      <div className='relative h-[80px] w-[80px] mx-auto mt-6'>
+      <div className=' h-[80px] w-[80px] mx-auto mt-6'>
   <img
     onClick={() => fileRef.current.click()}
     className='h-[80px] w-[80px] rounded-full object-cover'
     src={formData.avatar ?formData.avatar: userData.avatar}
     alt="avatar"
   />
-  {uploadProgress > 0 && uploadProgress < 100 ? (
-    <div className='absolute top-0 left-0 h-full w-full bg-black bg-opacity-50 flex justify-center items-center rounded-full'>
-      <span className='text-white text-sm'>{uploadProgress}%</span>
-    </div>
-  ) : null}
+  
 </div>
 
 
 
 
       <p className='text-center text-green-900 mt-2'>Edit profile</p>
+      {uploadProgress > 0 && uploadProgress < 100 ? (
+    
+    <span className='text-green-700 text-sm text-center'>Verifying image {uploadProgress}%</span>
+  
+      ) : null}
+      
+      {uploadProgress === 100 ? ( <p className='text-green-500 text-center mt-2'> Image Uploaded </p>) : ''}
+
+      {updateError && <p className='text-red-500 text-center mt-2'>{updateError}</p>}
+
+      {signOutError && (<p className='text-red-500 text-center mt-2'>{signOutError}</p>)}
+
 
       <form onSubmit={handleSubmit}
         className='text-center mt-5'>
@@ -209,14 +295,27 @@ export default function ProfilePage() {
        
 
         <button
+          
             className="bg-green-800 w-[300px] sm:w-[330px]
      text-white p-2 mt-6 text-center rounded-lg hover:opacity-90"
         >  { loading ? 'Updating...': 'Update'}</button>
     
-    {updateError && <p className='text-red-500 text-center mt-2'>{updateError}</p>}
+    
     
 </form>
-
+      <button
+        type='buttob'
+        onClick={handleSignoutUser}
+        className='bg-red-400 w-[300px] 
+   sm:w-[330px] text-center mx-auto mt-3 p-1
+    rounded-md hover:opacity-90'>Signout</button>
+      
+      <button
+        type='button'
+        onClick={handleDeleteUser}
+        className='bg-red-900 w-[300px] 
+   sm:w-[330px] text-center mx-auto mt-3 p-1
+    rounded-md text-white hover:opacity-90'>Delete Account</button>
 
 </div>
 )

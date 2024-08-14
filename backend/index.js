@@ -1,5 +1,9 @@
 import express from 'express'
 
+import cookieParser from 'cookie-parser'
+// Middleware to parse cookies
+
+
 const app = express();
 import mongoose from 'mongoose'
 app.use(express.json());
@@ -8,8 +12,8 @@ dotenv.config();
 import userRouter from './routes/userRoutes.js'
 import authRouter from './routes/authRoutes.js'
 
-
-app.use("/", userRouter)
+app.use(cookieParser());
+app.use("/auth/user", userRouter)
 app.use("/auth/user", authRouter)
 
 
