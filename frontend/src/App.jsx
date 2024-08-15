@@ -17,6 +17,7 @@ import FaQ from './assets/pages/FaQ';
 import Help from './assets/pages/Help';
 import Notifications from './assets/pages/Notifications';
 import Categories from './assets/pages/Categories';
+import Listing from './assets/pages/Listing';
 
 export default function App() {
   return (
@@ -37,6 +38,7 @@ export default function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/show-listing" element={<ShowListing />} />
         <Route path="/categories" element={<Categories />} />
+        <Route path="/listing/:listingId" element={<Listing />} />
        
         <Route path="/about" element={<AboutPage />} />
       

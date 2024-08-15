@@ -1,5 +1,6 @@
 import User from "../models/userModel.js"
-
+import CarListing from "../models/ListingModel.js"
+import { errorHandler } from "../utilities/error.js"
 
     export const updateUser = async (req, res, next) => {
         if (req.user.id !== req.params.id) return next(errorHandler(
@@ -42,4 +43,19 @@ import User from "../models/userModel.js"
               next(error)
           }
       
+      }
+
+
+
+export const createCarListing = async (req, res, next) => {
+    if (req.user.id !== req.body.owner.toString()) return next(errorHandler(
+        401,'Sign In to create a Listing'
+    )) 
+
+    try {
+        const listing = await CarListing.create(req.body);
+        return res.status(201).json(listing); 
+    } catch (error) {
+        next(error); 
+    } 
       }

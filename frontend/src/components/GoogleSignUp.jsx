@@ -10,7 +10,7 @@ import { loggedIn } from '../../redux/userSlice.js';
 
 export default function GoogleSignUp() {
 
-
+  
 
 
     const dispatch = useDispatch();
