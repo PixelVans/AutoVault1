@@ -15,9 +15,9 @@ export default function Header() {
           <Link to='/'>
               <h1 className='font-bold text-[17px] sm:text-[22px] text-center '>AutoVault</h1>
             </Link>
-              <form className='bg-white rounded-lg '>
+              <form className='bg-white rounded-lg sm:w-[350px] '>
                   <input
-                      className='p-[7px] sm:p-2 rounded-lg w-[140px] sm:w-64 focus:outline-none m-auto'
+                      className='p-[7px] sm:p-2 rounded-lg w-[140px] sm:w-[300px] focus:outline-none m-auto ml-3'
                       type="text"
                       placeholder='Search...' />  
                   <button className='mr-2 text-gray-500'>    <FaSearch /></button>

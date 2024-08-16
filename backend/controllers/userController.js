@@ -1,7 +1,7 @@
 import User from "../models/userModel.js"
 import CarListing from "../models/ListingModel.js"
 import { errorHandler } from "../utilities/error.js"
-
+import mongoose from 'mongoose';
     export const updateUser = async (req, res, next) => {
         if (req.user.id !== req.params.id) return next(errorHandler(
             401,'You can only update your own account'
@@ -48,9 +48,7 @@ import { errorHandler } from "../utilities/error.js"
 
 
 export const createCarListing = async (req, res, next) => {
-    if (req.user.id !== req.body.owner.toString()) return next(errorHandler(
-        401,'Sign In to create a Listing'
-    )) 
+   
 
     try {
         const listing = await CarListing.create(req.body);
@@ -58,4 +56,94 @@ export const createCarListing = async (req, res, next) => {
     } catch (error) {
         next(error); 
     } 
-      }
+}
+      
+
+export const myListings = async (req, res, next) => {
+    // if (req.user.id !== req.params.id.toString()) return next(errorHandler(
+    //     401,'Sign In to create a Listing'
+    // )) 
+    try {
+        
+        const listing = await CarListing.find({owner: req.params.id});
+        if (!listing) {
+            return next(errorHandler(404, "Listing not found"))
+          }
+     res.status(200).json( listing);
+    } catch (error) {
+        next(error); 
+    }
+}
+
+
+
+
+export const deleteCarListing = async (req, res, next) => {
+
+   
+    const listing = await CarListing.findById(req.params.id);
+    if (!listing) {
+        return next(errorHandler(404, "Listing not found"))
+      }     
+    
+    if (req.user.id !== listing.owner) {
+        return next(errorHandler(401, "You can only delete your own listings!"))
+           
+    }
+    
+
+    try {
+        await CarListing.findByIdAndDelete(req.params.id);
+     res.status(200).json( "Listing deleted successfully" );
+    } catch (error) {
+        next(error); 
+    }
+
+}
+
+
+export const updateUserListing = async (req, res, next) => {
+    const { id } = req.params;
+
+    // Validate the ID
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return next(errorHandler(400, "Invalid ID format"));
+    }
+
+    try {
+        // Find the listing
+        const listing = await CarListing.findById(id);
+        if (!listing) {
+            return next(errorHandler(404, "Listing not found"));
+        }
+
+        // Check ownership
+        if (req.user.id !== listing.owner.toString()) {
+            return next(errorHandler(401, "You can only update your own listings!"));
+        }
+
+        // Update the listing
+        const updatedListing = await CarListing.findByIdAndUpdate(id, req.body, { new: true });
+        res.status(200).json(updatedListing);
+    } catch (error) {
+        next(error);
+    }
+}
+
+
+
+
+
+export const getListing = async (req, res, next) => {
+   
+    try {
+        
+        const listing = await CarListing.findById(req.params.id);
+        if (!listing) {
+            return next(errorHandler(404, "Listing not found"))
+          }
+     res.status(200).json( listing);
+    } catch (error) {
+        next(error); 
+    }
+}

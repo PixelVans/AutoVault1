@@ -6,6 +6,7 @@ import { FaHeart } from 'react-icons/fa';
 import { FaCog } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { MyListingsComponent, } from '../../components/ribbonRoutes';
 
 export default function HomeRibbon() {
     const navigate = useNavigate()
@@ -29,14 +30,9 @@ export default function HomeRibbon() {
 
 
               
-              <Link to={'/show-listing'}>
-              <div
-                  className='h-[30px] sm:h-[43px] w-[90px] sm:w-[125px] text-[10px] sm:text-[15px] border
-                   border-gray-600 sm:border-gray-450   gap-1
-                   flex items-center justify-center text-white hover:h-[47px] hover:bg-slate-800 transition duration-300 rounded-sm'>
-              <h1>My Listings</h1>
-              </div>
-              </Link>
+               <MyListingsComponent/>
+              
+              
 
               <Link to={'/wish-list'}>
               <div

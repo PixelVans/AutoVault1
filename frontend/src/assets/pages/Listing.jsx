@@ -17,7 +17,8 @@ console.log(newCar)
       <h1 className='text-center text-md sm:text-2xl p-4 '>
        
         <span className='font-bold mr-4 text-md sm:text-2xl'>{newCar.title.toUpperCase()}
-          {newCar.model.toUpperCase()}</span>Added to your <Link to={'/show-listing'} className='text-blue-700 underline hover:text-blue-900'>Listings</Link> </h1>
+          {newCar.model.toUpperCase()}</span>Listed <Link to={'/'}
+            className='text-blue-700 underline hover:text-blue-900'>Go to HomePage</Link> </h1>
     <main className='flex flex-col sm:grid sm:grid-cols-2 '>
       
         <div className='bg-slate-200'>
