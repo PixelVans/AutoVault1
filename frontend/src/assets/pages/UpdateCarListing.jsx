@@ -204,7 +204,7 @@ const handleSubmit = async (e) => {
 
   return (
     <main className='w-[320px] sm:w-[1000px] mx-auto p-0 sm:p-3 sm:pl-[50px] mt-3 sm:pr-[30px]
-     bg-gray-200 rounded-lg shadow-sm border border-gray-400 text-center '>
+     bg-gray-200 rounded-lg shadow-sm border border-gray-400 text-center sm:text-left '>
       <h1 className='text-2xl sm:text-3xl font-semibold text-center my-1'>Update This Listing</h1>
       <form onSubmit={handleSubmit}
         className='flex flex-col sm:grid grid-cols-2'>

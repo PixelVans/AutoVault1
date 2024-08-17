@@ -11,14 +11,14 @@ export default function Listing() {
 
   SwiperCore.use([Navigation]);
   const newCar = useSelector(state => state.user.newCar);
-console.log(newCar)
+
   return (
     <div className='max-w-[1000px] mx-auto  mt-5 bg-slate-50 p-4 rounded-md shadow-md'>
       <h1 className='text-center text-md sm:text-2xl p-4 '>
        
         <span className='font-bold mr-4 text-md sm:text-2xl'>{newCar.title.toUpperCase()}
-          {newCar.model.toUpperCase()}</span>Listed <Link to={'/'}
-            className='text-blue-700 underline hover:text-blue-900'>Go to HomePage</Link> </h1>
+          {newCar.model.toUpperCase()}</span>Listed <Link to={''}
+            className='text-blue-700 underline hover:text-blue-900'></Link> </h1>
     <main className='flex flex-col sm:grid sm:grid-cols-2 '>
       
         <div className='bg-slate-200'>

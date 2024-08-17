@@ -11,10 +11,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 import userRouter from './routes/userRoutes.js'
 import authRouter from './routes/authRoutes.js'
-
+import publicRoutes from  './routes/publicRoutes.js'
 app.use(cookieParser());
 app.use("/auth/user", userRouter)
 app.use("/auth/user", authRouter)
+app.use("/auth", publicRoutes)
 
 
 

@@ -36,11 +36,22 @@ export default function SellCar() {
     fueltype: '',
     transmission: '',
     condition: '',
+    category: '',
+    sports: false,
   });
 
-
+console.log(formData)
 
   const handleChange = (e) => {
+
+    const { name, type, checked, value } = e.target;
+    
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+
+
     if (e.target.name === 'fueltype' || e.target.name === 'transmission' || e.target.name === 'condition') {
       setFormData({
         ...formData,
@@ -80,7 +91,7 @@ export default function SellCar() {
     }
     
     else {
-       setImageUploadError('You can only upload am max of  5 images per listing') 
+       setImageUploadError('You can only upload am max of  5 images per listing')
        setUploading(false)
     }
 }
@@ -107,12 +118,12 @@ const handleRemoveImage = (index) => {
             const filename = new Date().getTime() + file.name;
             const storageRef = ref(storage, filename);
             const uploadTask = uploadBytesResumable(storageRef, file);
-            uploadTask.on('state_changed', 
+            uploadTask.on('state_changed',
                 (snapshot) => {
                     (snapshot.bytesTransferred / snapshot.totalBytes) * 100
                 
                 },
-                (error) => { 
+                (error) => {
                     reject(error);
                 },
             
@@ -147,7 +158,7 @@ const handleSubmit = async (e) => {
       if(formData.images.length < 1)return setError('You must upload atleast one image')
       
       setLoading(true);
-      setError(false); 
+      setError(false);
       const res = await fetch(`/auth/user/createlisting/`, {
           method: 'POST',
           headers: {
@@ -162,7 +173,7 @@ const handleSubmit = async (e) => {
     
       setLoading(false)
       if (data.success === false) {
-        setError(data.message); 
+        setError(data.message);
         return
     }
     
@@ -345,6 +356,55 @@ const handleSubmit = async (e) => {
               value='used' />
           </div>
 
+
+
+          <div className='flex gap-2 mt-4'>
+            <p className='font-bold pr-6'>Category:</p>
+            Bus <input
+              className='w-[20px]'
+              id='bus'
+              required
+              name='category'
+              onChange={handleChange}
+              type="radio"
+              value='bus' />
+            Truck <input
+              className='w-[20px]'
+              id='truck'
+              required
+              name='category'
+              onChange={handleChange}
+              type="radio"
+              value='truck' />
+            Car <input
+              className='w-[20px]'
+              id='car'
+              required
+              name='category'
+              onChange={handleChange}
+              type="radio"
+              value='car' />
+            
+           
+            
+          </div>
+          <div className='flex gap-2 mt-4'>
+            <p className='font-bold pr-6'>Sports:</p>
+            <p className="text-gray-800">optional</p> <input
+              className='w-[20px]'
+              id='sports'
+              name='sports'
+              onChange={handleChange}
+              type="checkbox"
+              value='new' />
+            
+            
+           
+            
+          </div>
+
+          
+
           <p className='text-center mt-6 text-gray-900 font-bold'>Upload Your Car images (5 max)</p>
           <div className='mt-2 flex'>
            
@@ -379,7 +439,7 @@ const handleSubmit = async (e) => {
                           <button onClick={()=>handleRemoveImage(index)}
                               type='button'
                               className='p-3
-                           text-red-700 rounded-lg uppercase 
+                           text-red-700 rounded-lg uppercase
                       hover:opacity-60 disabled:opacity-75'>Cancel</button>
                       </div>
                             
@@ -388,7 +448,7 @@ const handleSubmit = async (e) => {
 
 
 
-<button disabled={loading } className='p-2 mt-3 bg-slate-800 text-white rounded-lg 
+<button disabled={loading } className='p-2 mt-3 bg-slate-800 text-white rounded-lg
              uppercase hover:opacity-85 disabled:opacity-75 w-full'>{loading ? 'Creating...' : 'Create Listing'}</button>
                   {error && <p className='text-red-700 text-sm'>{ error}</p>}
         </div>
@@ -396,3 +456,42 @@ const handleSubmit = async (e) => {
     </main>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

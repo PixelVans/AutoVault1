@@ -49,6 +49,11 @@ const carListingSchema = new mongoose.Schema({
   
     required: true,
   },
+  category: {
+    type: String,
+  
+    required: true,
+  },
   location: {
     type: String,
     required: true,

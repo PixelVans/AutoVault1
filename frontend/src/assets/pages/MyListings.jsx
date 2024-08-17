@@ -80,7 +80,7 @@ export default function MyListings() {
       <div className='flex max-w-[340px] sm:max-w-[1300px] mx-auto flex-wrap mt-5'>
         {filteredListings.length > 0 ? (
           filteredListings.map((listing, index) => (
-            <div key={index} className='w-[150px] h-[175px] sm:w-[290px] sm:h-[275px] bg-gray-50 m-1 shadow-lg overflow-hidden'>
+            <div key={index} className='w-[150px] h-[175px] group sm:w-[290px] sm:h-[275px] bg-gray-50 m-1 shadow-lg overflow-hidden'>
               <img
                 className='h-[120px] w-[150px] sm:h-[200px] sm:w-[300px] object-cover hover:scale-105 transition-scale duration-300 cursor-pointer'
                 src={listing.images[0]}
@@ -88,10 +88,10 @@ export default function MyListings() {
               />
               <p className='mt-1 sm:mt-2 font-bold ml-1 text-[11px] sm:text-[17px]'>{listing.title}</p>
               
-              <div className='  flex justify-between'>
+              <div className='flex sm:hidden group-hover:flex justify-between'>
                
               <Link to={`/update-listing/${listing._id}`}>
-                  <button className='bg-slate-800 p-1 rounded-lg
+                  <button  className='bg-slate-800 p-1 rounded-lg
                    text-white px-5 mx-1 mt-1 hover:opacity-80 text-[10px] sm:text-[16px]'>EDIT</button>
                 </Link>
                 

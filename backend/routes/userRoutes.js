@@ -1,6 +1,7 @@
 import express from 'express'
 import {  createCarListing, deleteCarListing, deleteUser, getListing, myListings, updateUser, updateUserListing } from '../controllers/userController.js'
 import { verifyToken } from '../utilities/verifyUser.js'
+
 const router = express.Router()
 
 router.get("/", (req, res) => {
@@ -16,6 +17,7 @@ router.put('/update-listing/:id', verifyToken, updateUserListing);
 
 router.get('/mylistings/:id',  myListings)
 router.get('/get-listing/:id',  getListing)
+
 
 
 
