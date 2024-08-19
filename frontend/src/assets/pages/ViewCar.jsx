@@ -1,16 +1,19 @@
-import React from 'react'
+import {React,useState} from 'react'
 import { useSelector } from 'react-redux'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper'
 import {Navigation} from 'swiper/modules'
 import 'swiper/css/bundle';
 import { Link } from 'react-router-dom';
+import Contact from '../../components/Owner';
 
 
 
 
 export default function ViewCar() {
-const listing = useSelector(state => state.user.listing)
+    const listing = useSelector(state => state.user.listing)
+    const currentUser = useSelector(state => state.user.userData)
+    const [contact, setContact] = useState(false);
 
   return (
       <main className='max-w-[1200px] mx-auto p-2 shadow-md shadow-gray-900 mt-4'>
@@ -20,7 +23,15 @@ const listing = useSelector(state => state.user.listing)
                       <SwiperSlide>
                           <div >
                               <img className='object-cover w-full h-[428px]' src={listing.images} alt="" />
-                              <button className='text-white font-bold w-full mx-auto p-3 bg-slate-800 text-center'>Contact Owner</button>
+                              {currentUser && listing.owner !== currentUser._id && !contact &&(
+                                  <button onClick={() => setContact(true)}
+                                      className='bg-slate-800 text-white
+                                       rounded-lg uppercase hover:opacity-85 p-3 w-full mx-auto text-center mt-3'>
+                Contact Owner
+              </button>
+                              )}
+                              
+                              {contact && <Contact listing={listing} />}
                           </div>
                       </SwiperSlide>
                       
@@ -62,7 +73,7 @@ const listing = useSelector(state => state.user.listing)
                       
 
                   </div>
-                       <div className='bg-slate-100 mb-4 h-full'>
+                       <div className='bg-slate-100 mb-4 '>
                        <h4 className='p-1 font-bold text-center'>  Description</h4>  
                        <h4 className='mx-9'>  { listing.description} </h4>    
                        </div>
