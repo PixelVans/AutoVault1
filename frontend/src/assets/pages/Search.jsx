@@ -1,12 +1,20 @@
 import { React, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { viewListing } from '../../../redux/userSlice';
+import { useDispatch } from 'react-redux';
+
+
+
+
 
 export default function Search() {
     const [searchListings, setSearchListings] = useState([]);
     const [listings, setListings] = useState([]);
     const [showMore, setShowMore] = useState(false);
-    const navigate = useNavigate()
-    const [loadingCat, setLoading] = useState(false)
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const [loadingCat, setLoading] = useState(false)
+  
     
     
 
@@ -99,24 +107,20 @@ export default function Search() {
 
 
     
+
+
     const handlegetListing = async (id) => {
-
-        try {
-          const res = await fetch(`auth/user/get-listing/${id}`);
-         
-          const data = await res.json()
-         
-    
-          dispatch(viewListing(data))
-          navigate(`/view/listing/${data._id}`)
-        } catch (error) {
-          console.log(error)
-        }
-        
-    }
-    
-
-
+      try {
+        const res = await fetch(`/auth/user/get-listing/${id}`);
+      const data = await res.json()
+      dispatch(viewListing(data))
+        navigate(`/view/listing/${data._id}`)
+      } catch (error) {
+        console.log(error)
+      }
+      
+  }
+  
 
 
    

@@ -107,11 +107,11 @@ const onShowMoreClick = async () => {
 
 
   return (
-    <div className='flex'>
+    <div className='flex min-h-screen'>
 
       
         
-              <div className='bg-gray-800 h-full mt-1 max-w-[450px] flex flex-col shadow-lg shadow-black'>
+              <div className='bg-gray-800 min-h-screen mt-1 max-w-[470px] flex flex-col shadow-lg shadow-black'>
         <div className='border border-gray-700 text-center p-2 bg-slate-900 mb-[20px]'>
           <h1 className='text-gray-400  text-center  font-bold text-[20px] mt-7 mb-[20px]'>Sort Type</h1>
         </div>
@@ -123,7 +123,7 @@ const onShowMoreClick = async () => {
           className='hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out  cursor-pointer'>
         <div className='border border-gray-700 text-center p-2 mt-5 border-t-0 bg-supercar h-[35px] shadow-lg'></div>
         <div className='border border-gray-700 border-t-0 text-center p-1'>
-          <h1 className='text-gray-400 text-center  text-[18px]'>Super Cars</h1>
+          <h1 className='text-gray-400 text-center  text-[18px]'>Need For Speed</h1>
         </div>
         </div>
 
@@ -185,64 +185,74 @@ const onShowMoreClick = async () => {
 
         <div
           onClick={()=>handleCarBrand('toyota')}
-          className='border border-gray-700 border-t-0 text-center  hover:scale-x-110 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
+          className='border border-gray-700 border-t-0 text-center 
+          p-1 cursor-default hover:scale-x-110 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Toyota</h1>
         </div>
 
 
         <div
         onClick={()=>handleCarBrand('mercedez')}
-          className='border border-gray-700 border-t-0 text-center mt-2  hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
+          className='border border-gray-700 border-t-0 text-center mt-2  
+           p-1 cursor-default hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Mercedez Benz</h1>
         </div>
 
 
         <div
           onClick={()=>handleCarBrand('nissan')}
-          className='border border-gray-700 border-t-0 text-center  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
+          className='border border-gray-700 border-t-0 text-center 
+           p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Nissan</h1>
         </div>
         
         <div
          onClick={()=>handleCarBrand('audi')}
-          className='border border-gray-700 border-t-0 text-center  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
+          className='border border-gray-700 border-t-0 text-center 
+           p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Audi</h1>
         </div>
       
         <div
           onClick={()=>handleCarBrand('bmw')}
-          className='border border-gray-700 border-t-0 text-center  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
+          className='border border-gray-700 border-t-0 text-center 
+           p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>BMW</h1>
         </div>
         
         <div
         onClick={()=>handleCarBrand('land rover')}
-          className='border border-gray-700 border-t-0 text-center  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
+          className='border border-gray-700 border-t-0 text-center 
+           p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Land Rover</h1>
         </div>
         
         <div
           onClick={()=>handleCarBrand('ford')}
-          className='border border-gray-700 border-t-0 text-center  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
+          className='border border-gray-700 border-t-0 text-center 
+           p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Ford</h1>
         </div>
         
         <div
         onClick={()=>handleCarBrand('volks wagen')}
-          className='border border-gray-700 border-t-0 text-center mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
+          className='border border-gray-700 border-t-0 text-center
+            p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Volks Wagen</h1>
         </div>
 
         <div
           onClick={()=>handleCarBrand('subaru')}
-          className='border border-gray-700 border-t-0 text-center  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
+          className='border border-gray-700 border-t-0 text-center 
+           p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Subaru</h1>
         </div>
         
         
         <div
         onClick={()=>handleCarBrand('mazda')}
-          className='border border-gray-700 border-t-0 text-center  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
+          className='border border-gray-700 border-t-0 text-center 
+           p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Mazda</h1>
         </div>
         
