@@ -4,7 +4,8 @@ const initialState = {
     userData: null,
     isAuthenticated: false,
     newCar: null,
-    myListings: null
+    myListings: null,
+    listing: null
 }
   
 export const userSlice = createSlice({
@@ -20,7 +21,7 @@ export const userSlice = createSlice({
             state.userData = null;  
         },
         sellcar: (state,action) => {
-            state.isAuthenticated = true;
+          
             state.newCar = action.payload;  
         },
         userListings: (state,action) => {
@@ -31,7 +32,11 @@ export const userSlice = createSlice({
             state.myListings = state.myListings.filter(
               listing => listing._id !== action.payload
             );
-          },
+            
+        },
+        viewListing: (state, action) => { 
+                state.listing = action.payload;  
+            },
     }
 })
 
@@ -42,6 +47,6 @@ export const userSlice = createSlice({
 
 
 
-export const {loggedIn ,loggedOut,sellcar,userListings,removeListing } = userSlice.actions
+export const {loggedIn ,loggedOut,sellcar,userListings,removeListing,viewListing } = userSlice.actions
 
 export default userSlice.reducer

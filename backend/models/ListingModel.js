@@ -51,8 +51,12 @@ const carListingSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-  
     required: true,
+    // Allowed values for category
+  },
+  sports: {
+    type: Boolean,
+  
   },
   location: {
     type: String,
@@ -64,8 +68,7 @@ const carListingSchema = new mongoose.Schema({
   },
   owner: {
     type: String,
-    
-    required: true,
+   required: true,
   }
 },{ timestamps: true });
 

@@ -11,7 +11,7 @@ export const MyListingsComponent = () => {
   const [loading, setLoading] = useState(false);
 
   const handleMyListings = async () => {
-    console.log(userData);
+
     try {
         setListingsError(false);
         setLoading(true)

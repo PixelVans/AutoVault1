@@ -37,8 +37,12 @@ export default function UpdateCarListing() {
     fueltype: '',
     transmission: '',
     condition: '',
+    category: '',
+    sports: false,
   });
 
+
+  console.log(formData)
 
   useEffect(() => {
     const fetchListing = async () => {
@@ -59,6 +63,16 @@ export default function UpdateCarListing() {
    
 
   const handleChange = (e) => {
+
+    const { name, type, checked, value } = e.target;
+    
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+
+
+
     if (e.target.name === 'fueltype' || e.target.name === 'transmission' || e.target.name === 'condition') {
       setFormData({
         ...formData,
@@ -364,6 +378,64 @@ const handleSubmit = async (e) => {
               type="radio"
               value='used' />
           </div>
+
+
+          <div className='flex gap-2 mt-4'>
+            <p className='font-bold pr-6'>Category:</p>
+            Bus <input
+              className='w-[20px]'
+              id='bus'
+              required
+              name='category'
+              onChange={handleChange}
+              type="radio"
+              value='bus' />
+            Truck <input
+              className='w-[20px]'
+              id='truck'
+              required
+              name='category'
+              onChange={handleChange}
+              type="radio"
+              value='truck' />
+            Nm-Car <input
+              className='w-[20px]'
+              id='car'
+              required
+              name='category'
+              onChange={handleChange}
+              type="radio"
+              value='car' />
+            SUV <input
+              className='w-[20px]'
+              id='suv'
+              required
+              name='category'
+              onChange={handleChange}
+              type="radio"
+              value='suv'/>
+            
+           
+            
+          </div>
+          <div className='flex gap-2 mt-4'>
+            <p className='font-bold pr-6'>Sports:</p>
+            <p className="text-gray-800">optional</p> <input
+              className='w-[20px]'
+              id='sports'
+              name='sports'
+              onChange={handleChange}
+              type="checkbox"
+              value='sports' />
+            
+            
+           
+            
+          </div>
+
+
+
+
 
           <p className='text-center mt-6 text-gray-900 font-bold'>Upload Your Car images (5 max)</p>
           <div className='mt-2 flex'>

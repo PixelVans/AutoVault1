@@ -21,6 +21,7 @@ import Listing from './assets/pages/Listing';
 import MyListings from './assets/pages/MyListings';
 import UpdateCarListing from './assets/pages/UpdateCarListing';
 import ViewCar from './assets/pages/ViewCar';
+import Search from './assets/pages/Search';
 
 export default function App() {
   return (
@@ -43,6 +44,7 @@ export default function App() {
        
         <Route path="/categories" element={<Categories />} />
         <Route path="/listing/:listingId" element={<Listing />} />
+        <Route path="/search" element={<Search />} />
        
         <Route path="/about" element={<AboutPage />} />
       

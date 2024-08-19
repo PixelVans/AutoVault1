@@ -37,7 +37,7 @@ export default function SellCar() {
     transmission: '',
     condition: '',
     category: '',
-    sports: false,
+    sports: false
   });
 
 console.log(formData)
@@ -376,7 +376,7 @@ const handleSubmit = async (e) => {
               onChange={handleChange}
               type="radio"
               value='truck' />
-            Car <input
+            Nm-Car <input
               className='w-[20px]'
               id='car'
               required
@@ -384,6 +384,14 @@ const handleSubmit = async (e) => {
               onChange={handleChange}
               type="radio"
               value='car' />
+            SUV <input
+              className='w-[20px]'
+              id='suv'
+              required
+              name='category'
+              onChange={handleChange}
+              type="radio"
+              value='suv' />
             
            
             
@@ -396,7 +404,7 @@ const handleSubmit = async (e) => {
               name='sports'
               onChange={handleChange}
               type="checkbox"
-              value='new' />
+              value='sports' />
             
             
            

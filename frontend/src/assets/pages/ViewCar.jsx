@@ -1,7 +1,75 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore from 'swiper'
+import {Navigation} from 'swiper/modules'
+import 'swiper/css/bundle';
+import { Link } from 'react-router-dom';
+
+
+
 
 export default function ViewCar() {
+const listing = useSelector(state => state.user.listing)
+
   return (
-    <div>ViewCar</div>
+      <main className='max-w-[1200px] mx-auto p-2 shadow-md shadow-gray-900 mt-4'>
+          <div className='grid grid-cols-2'>
+              <div className=' mt-5'>
+                  <Swiper>
+                      <SwiperSlide>
+                          <div >
+                              <img className='object-cover w-full h-[428px]' src={listing.images} alt="" />
+                              <button className='text-white font-bold w-full mx-auto p-3 bg-slate-800 text-center'>Contact Owner</button>
+                          </div>
+                      </SwiperSlide>
+                      
+                  </Swiper>  
+          </div>
+              <div className='bg-white mt-5'>
+                  <h1 className='text-center mt-3 text-2xl text-gray-900 font-semibold'> Vehicle Details</h1><hr></hr>
+                  <div className='bg-slate-50 px-9 m-5 grid grid-cols-2 p-2 shadow-black shadow-md'>
+                      <div>
+                       <h4 className='p-1 font-bold'>Title </h4>   
+                       <h4 className='p-1 font-bold'>  Brand </h4>   
+                       <h4 className='p-1  font-bold'> Model </h4>   
+                       <h4 className='p-1  font-bold'> Year </h4>   
+                       <h4 className='p-1  font-bold'>  Location</h4>   
+                       <h4 className='p-1 font-bold '> Mileage </h4>   
+                       <h4 className='p-1  font-bold'> Fuel Type </h4>   
+                       <h4 className='p-1  font-bold'> Condition </h4>   
+                       <h4 className='p-1  font-bold'>  Transmission </h4>   
+                       <h4 className='p-1 pl-4 bg-slate-800 rounded-lg rounded-r-none mt-2 font-bold text-white'>  Price</h4>   
+                       
+                      </div>
+                      
+                      <div>
+                          <h4 className='ml-2 p-1'>{listing.title}</h4> 
+                          <h4 className='ml-2 p-1'> { listing.brand}   </h4>
+                          <h4 className='ml-2 p-1'>  { listing.model} </h4>
+                          <h4 className='ml-2 p-1'> { listing.year}  </h4>
+                          <h4 className='ml-2 p-1'> { listing.location}  </h4>
+                          <h4 className='ml-2 p-1'> { listing.mileage}  </h4>
+                          <h4 className='ml-2 p-1'>  { listing.fueltype} </h4>
+                          <h4 className='ml-2 p-1'>  { listing.condition} </h4>
+                          <h4 className='ml-2 p-1'>  {listing.transmission} </h4>
+                          <h4 className=' p-1 mt-2  pl-4 text-white font-bold bg-red-600 rounded-lg rounded-l-none'> ${ listing.price} </h4>
+                         
+                          
+                      </div>
+                   
+                 
+                      
+
+                  </div>
+                       <div className='bg-slate-100 mb-4 h-full'>
+                       <h4 className='p-1 font-bold text-center'>  Description</h4>  
+                       <h4 className='mx-9'>  { listing.description} </h4>    
+                       </div>
+              </div>
+          </div>
+
+          
+    </main>
   )
 }
