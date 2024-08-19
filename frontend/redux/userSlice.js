@@ -5,7 +5,9 @@ const initialState = {
     isAuthenticated: false,
     newCar: null,
     myListings: null,
-    listing: null
+    listing: null,
+    wishlist: [],
+  
 }
   
 export const userSlice = createSlice({
@@ -36,7 +38,20 @@ export const userSlice = createSlice({
         },
         viewListing: (state, action) => { 
                 state.listing = action.payload;  
-            },
+        },
+        addToWishlist: (state, action) => {
+            // Check if the item is already in the wishlist
+            const exists = state.wishlist.find(item => item._id === action.payload._id);
+            if (!exists) {
+              state.wishlist.push(action.payload);
+            }
+        },
+        removeFromWishlist: (state, action) => {
+            // Filter out the item with the matching ID
+            state.wishlist = state.wishlist.filter(item => item._id !== action.payload);
+        },
+       
+        
     }
 })
 
@@ -47,6 +62,6 @@ export const userSlice = createSlice({
 
 
 
-export const {loggedIn ,loggedOut,sellcar,userListings,removeListing,viewListing } = userSlice.actions
+export const {loggedIn ,loggedOut,sellcar,userListings,removeListing,viewListing,addToWishlist,removeFromWishlist,homestorage } = userSlice.actions
 
 export default userSlice.reducer

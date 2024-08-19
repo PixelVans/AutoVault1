@@ -1,3 +1,5 @@
+
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -14,6 +16,16 @@ export default {
         'suv': "url('./public/images/suvvv.jpg')",
         'truck': "url('./public/images/trucksss.jpg')",
         'theme': "url('./public/images/theme.jpg')",
+        'orange-gradient': 'linear-gradient(to bottom, #F57F17, #F8B400)',
+      },
+      animation: {
+        rotate: 'rotate 3s linear infinite',
+      },
+      keyframes: {
+        rotate: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
     },
   },

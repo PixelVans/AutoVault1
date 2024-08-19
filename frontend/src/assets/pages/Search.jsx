@@ -132,11 +132,11 @@ export default function Search() {
 
 
   return (
-    <div className='flex'>
+    <div className='flex min-h-screen'>
 
       
         
-              <div className='bg-gray-800 h-full mt-1 max-w-[450px] flex flex-col shadow-lg shadow-black'>
+              <div className='bg-gray-800 min-h-screen mt-1 max-w-[450px] flex flex-col shadow-lg shadow-black'>
         <div className='border border-gray-700 text-center p-2 bg-slate-900 mb-[20px]'>
           <h1 className='text-gray-400  text-center  font-bold text-[20px] mt-7 mb-[20px]'>Sort Type</h1>
         </div>
@@ -289,8 +289,8 @@ export default function Search() {
        
         <div className='flex flex-wrap ml-3 w-full'>
            
-                  {searchListings.length > 0 ? (<h1 className='text-center text-[22px] mx-auto w-full'>Results</h1>) : (
-                  (<h1 className='text-center text-[22px] mx-auto w-full'>Oops! No Results</h1>)     
+                  {searchListings.length > 0 ? (<h1 className='text-center text-[22px] mx-auto w-full bg-slate-300 font-light'>Results</h1>) : (
+                  (<h1 className='text-center text-[22px] mx-auto w-full'>Waiting For Results..</h1>)     
                   )}
                   {loadingCat && <p className='text-center text-[22px] mx-auto w-full'>Loading..</p>}
        
