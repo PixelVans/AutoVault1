@@ -113,6 +113,7 @@ const onShowMoreClick = async () => {
 
 
   return (
+    <>
     <div className='flex min-h-screen relative'>
       <div className='bg-gray-950 h-[100px] w-full absolute z-[-1] mt-1 text-center text-white shadow-md shadow-black'>
         <h1 className='text-[24px] font-bold mt-3'>Welcome to AutoVault!</h1>
@@ -120,7 +121,7 @@ const onShowMoreClick = async () => {
 </div>
       
         
-              <div className='bg-gray-800 min-h-screen mt-1 max-w-[470px] hidden sm:flex flex-col shadow-lg shadow-black'>
+              <div className='bg-gray-800 min-h-screen mt-1 max-w-[470px] hidden sm:flex flex-col shadow-lg'>
         <div className='border border-gray-700 text-center p-2 bg-slate-900 mb-[20px]'>
           <h1 className='text-gray-400  text-center  font-bold text-[20px] mt-7 mb-[20px]'>Sort Type</h1>
         </div>
@@ -324,18 +325,23 @@ const onShowMoreClick = async () => {
             >
               Show more
             </button>
-          )}
+        )}
+   
       </div>
 
+    
 
-
+        
+  
 
 
     </div>
+       {/* <div className=' bottom-0 left-0 w-full bg-slate-200 p-2 z-50 h-[400px] mt-5'>
+  <h1 className='text-center italic'>Footer</h1>
+</div> */}
    
-  
     
-   
+   </>
     
   )
 }
