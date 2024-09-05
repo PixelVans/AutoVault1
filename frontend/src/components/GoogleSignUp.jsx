@@ -4,7 +4,7 @@ import { app } from '../fireBase.js';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { loggedIn } from '../../redux/userSlice.js';
-
+import { FcGoogle } from 'react-icons/fc';
 
 
 
@@ -59,10 +59,11 @@ export default function GoogleSignUp() {
       <button
           onClick={ handleGoogleSignUp}
        type='button'
-            className="bg-red-800 w-[300px] sm:w-[330px]
-     text-white p-2 mt-2 text-center rounded-lg hover:opacity-90"
-  >
-    Continue with Google
+            className="bg-slate-300 w-[300px] sm:w-[330px]
+     text-black p-1 mt-2 text-center rounded-lg hover:opacity-90 shadow-sm shadow-black"
+  >  
+          <h4 className='flex justify-center text-center text-[17px] sm:text-xl '>continue with <span className='ml-3'>
+              <FcGoogle className=" text-[17px] sm:text-xl mt-[5px]" /></span>oogle</h4>
   </button>
   )
 }

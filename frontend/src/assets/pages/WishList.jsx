@@ -3,6 +3,7 @@ import { useSelector,useDispatch } from 'react-redux'
 import { FaHeart } from 'react-icons/fa';
 import { removeFromWishlist,viewListing } from '../../../redux/userSlice';
 import { useNavigate} from 'react-router-dom'
+import { AiOutlineClose } from 'react-icons/ai';
 
 export default function WishList() {
   const wishlist = useSelector(state => state.user.wishlist)
@@ -27,14 +28,14 @@ export default function WishList() {
     dispatch(removeFromWishlist(id));
   };
   return (
-    <div className='flex max-w-[1200px] mx-auto mt-5 flex-wrap'>
+    <div className='flex sm:max-w-[1300px] mx-auto mt-5 flex-wrap justify-center'>
        {wishlist&& wishlist.map((listing, index) => (
             
            
               
-            <div key={index} className='w-[240px] h-[250px] m-1 bg-slate-100 rounded-sm shadow-black shadow-md ml-1 overflow-hidden '>
+            <div key={index} className='w-[160px] h-[210px] sm:w-[240px] sm:h-[250px] m-1 bg-slate-100 rounded-sm shadow-black shadow-md sm:ml-1 overflow-hidden '>
              
-              <img onClick={() =>handlegetListing(listing._id)} className='h-[160px] w-[240px] object-cover hover:scale-105 transition-scale duration-300 ' src={listing.images[0]}></img>
+              <img onClick={() =>handlegetListing(listing._id)} className='h-[120px] w-[160px] sm:h-[160px] sm:w-[240px] object-cover hover:scale-105 transition-scale duration-300 ' src={listing.images[0]}></img>
               <div className='relative'>
               <p className='font-bold text-gray-900 ml-2'>{ listing.title}</p>
               <p className='text-[12px] ml-2'><span className='font-bold'>Year:</span> { listing.year}</p>
@@ -42,9 +43,16 @@ export default function WishList() {
               <p className='text-[12px] ml-2'><span className='font-bold'>Price:</span> <span className='text-red-600 font-bold'>${ listing.price}</span> </p>
                 <button
                 onClick={() => handleRemoveFromWishlist(listing._id)} 
-               className='absolute right-0 top-1/2 transform -translate-y-1/2 p-1 px-2 
-                 mr-2 rounded-lg text-[16px] text-white hover:text-red-700 bg-slate-900'>Remove
-                  </button>
+               className='hidden sm:block sm:absolute right-0 top-0 transform -translate-y-1/2 p-1 px-2 
+                 rounded-lg text-[19px] text-black hover:text-red-700 mt-3'><AiOutlineClose/>
+             </button>
+                <button
+                onClick={() => handleRemoveFromWishlist(listing._id)} 
+               className='absolute sm:hidden right-0 top-0 transform -translate-y-1/2 p-1 px-2 
+                  rounded-lg text-[16px] text-black hover:text-red-700 mt-3'><AiOutlineClose/>
+             </button>
+             
+                
               </div>
             </div>
 

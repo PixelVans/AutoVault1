@@ -8,7 +8,7 @@ import { useNavigate} from 'react-router-dom'
 import { useDispatch ,useSelector} from 'react-redux';
 import { addToWishlist, viewListing } from '../../../redux/userSlice';
 import { FaHeart } from 'react-icons/fa';
-
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 
 
@@ -115,7 +115,7 @@ const onShowMoreClick = async () => {
   return (
     <>
     <div className='flex min-h-screen relative'>
-      <div className='bg-gray-950 h-[100px] w-full absolute z-[-1] mt-1 text-center text-white shadow-md shadow-black'>
+      <div className='bg-gray-900 h-[100px] w-full absolute z-[-1] mt-1 text-center text-white shadow-md shadow-black'>
         <h1 className='text-[24px] font-bold mt-3'>Welcome to AutoVault!</h1>
         <h4 className='text-[16px] text-red-500 '>Buy and sell vehicles with ease. Explore our platform for a seamless automotive experience!</h4>
 </div>
@@ -284,7 +284,7 @@ const onShowMoreClick = async () => {
        
 
         
-        <div className='flex flex-wrap ml-3 w-full'>
+        <div className='flex flex-wrap  w-full justify-center'>
            
          <div className='w-full mt-[50px] p-2'>
             <h1 className='text-center text-[21px] mx-auto w-full bg-slate-200 font-thin'>Featured Listings</h1>
@@ -299,17 +299,18 @@ const onShowMoreClick = async () => {
             
            
               
-            <div key={index} className='w-[240px] h-[250px] m-1 bg-slate-100 rounded-sm shadow-black shadow-md ml-1 overflow-hidden'>
+            <div key={index} className=' w-[160px] h-[210px] md:w-[240px] md:h-[250px] m-1 bg-slate-100 rounded-sm shadow-black shadow-md ml-1 overflow-hidden'>
              
-              <img onClick={() =>handlegetListing(listing._id)} className='h-[160px] w-[240px] object-cover hover:scale-105 transition-scale duration-300 ' src={listing.images[0]}></img>
+              <img onClick={() =>handlegetListing(listing._id)} className='h-[120px] w-[160px] md:h-[160px] md:w-[240px] object-cover hover:scale-105 transition-scale duration-300 ' src={listing.images[0]}></img>
               <div className='relative'>
-              <p className='font-bold text-gray-900 ml-2'>{ listing.title}</p>
-              <p className='text-[12px] ml-2'><span className='font-bold'>Year:</span> { listing.year}</p>
-              <p className='text-[12px] ml-2'><span className='font-bold'>Location:</span> { listing.location}</p>
+              <p className='font-bold text-gray-950 ml-2 text-[12px] sm:text-[16px]'>{ listing.title}</p> <hr/>
+              <p className='text-[12px] ml-2 mt-1'><span className='font-bold'>Year:</span> { listing.year}</p>
+              <p className='text-[12px] ml-2 hidden sm:block'><span className='font-bold'>Location:</span> { listing.location}</p>
+              <p className='text-[12px] ml-2 flex sm:hidden'><span className='font-bold text-green-800 my-auto mr-1'> <FaMapMarkerAlt/> </span> { listing.location}</p>
               <p className='text-[12px] ml-2'><span className='font-bold'>Price:</span> <span className='text-red-600 font-bold'>${ listing.price}</span> </p>
                 <p
                   onClick={() => handleAddToWishlist(listing)}
-                  className='absolute right-0 top-1/2 transform -translate-y-1/2 p-3 text-[25px] text-gray-500 hover:text-red-700'><FaHeart />
+                  className='absolute right-0 top-1/2 transform -translate-y-1/2 p-3 text-[18px] sm:text-[25px] text-gray-500 hover:text-red-700'><FaHeart />
                   </p>
               </div>
             </div>

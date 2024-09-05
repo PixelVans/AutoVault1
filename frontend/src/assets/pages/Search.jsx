@@ -2,9 +2,9 @@ import { React, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { viewListing } from '../../../redux/userSlice';
 import { useDispatch } from 'react-redux';
-
-
-
+import { addToWishlist} from '../../../redux/userSlice';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
 
 
 export default function Search() {
@@ -123,7 +123,9 @@ export default function Search() {
   
 
 
-   
+  const handleAddToWishlist = (listing) => {
+    dispatch(addToWishlist(listing));
+  };
   
    
 
@@ -136,7 +138,7 @@ export default function Search() {
 
       
         
-              <div className='bg-gray-800 min-h-screen mt-1 max-w-[450px] flex flex-col shadow-lg shadow-black'>
+              <div className='bg-gray-800 min-h-screen mt-1 max-w-[450px] hidden md:flex flex-col shadow-lg shadow-black'>
         <div className='border border-gray-700 text-center p-2 bg-slate-900 mb-[20px]'>
           <h1 className='text-gray-400  text-center  font-bold text-[20px] mt-7 mb-[20px]'>Sort Type</h1>
         </div>
@@ -287,27 +289,34 @@ export default function Search() {
         
       <div className='max-w-[1300px] mx-auto'>
        
-        <div className='flex flex-wrap ml-3 w-full'>
+        <div className='flex flex-wrap  w-full justify-center'>
            
-                  {searchListings.length > 0 ? (<h1 className='text-center text-[22px] mx-auto w-full bg-slate-300 font-light'>Results</h1>) : (
-                  (<h1 className='text-center text-[22px] mx-auto w-full'>Waiting For Results..</h1>)     
+                  {searchListings.length > 0 ? (<h1 className='text-center text-[22px] mx-auto w-full bg-slate-300 font-light mb-1'>Results</h1>) : (
+                  (<h1 className='text-center text-[22px] mx-auto w-full '>Waiting For Results..</h1>)     
                   )}
                   {loadingCat && <p className='text-center text-[22px] mx-auto w-full'>Loading..</p>}
        
         
-          {searchListings&& searchListings.map((listing, index) => (
+          {searchListings && searchListings.map((listing, index) => (
             
            
               
-            <div key={index} className='w-[240px] h-[250px] m-1 bg-slate-100 rounded-sm shadow-black shadow-md ml-1 overflow-hidden'>
+         
+          <div key={index} className=' w-[160px] h-[210px] md:w-[240px] md:h-[250px] m-1 bg-slate-100 rounded-sm shadow-black shadow-md ml-1 overflow-hidden'>
              
-              <img onClick={() =>handlegetListing(listing._id)} className='h-[160px] w-[240px] object-cover hover:scale-105 transition-scale duration-300 ' src={listing.images[0]}></img>
-              
-              <p className='font-bold text-gray-900 ml-2'>{ listing.title}</p>
-              <p className='text-[12px] ml-2'><span className='font-bold'>Year:</span> { listing.year}</p>
-              <p className='text-[12px] ml-2'><span className='font-bold'>Location:</span> { listing.location}</p>
-              <p className='text-[12px] ml-2'><span className='font-bold'>Price:</span> <span className='text-red-600 font-bold'>${ listing.price}</span> </p>
+          <img onClick={() =>handlegetListing(listing._id)} className='h-[120px] w-[160px] md:h-[160px] md:w-[240px] object-cover hover:scale-105 transition-scale duration-300 ' src={listing.images[0]}></img>
+          <div className='relative'>
+          <p className='font-bold text-gray-950 ml-2 text-[12px] sm:text-[16px]'>{ listing.title}</p> <hr/>
+          <p className='text-[12px] ml-2 mt-1'><span className='font-bold'>Year:</span> { listing.year}</p>
+          <p className='text-[12px] ml-2 hidden sm:block'><span className='font-bold'>Location:</span> { listing.location}</p>
+          <p className='text-[12px] ml-2 flex sm:hidden'><span className='font-bold text-green-800 my-auto mr-1'> <FaMapMarkerAlt/> </span> { listing.location}</p>
+          <p className='text-[12px] ml-2'><span className='font-bold'>Price:</span> <span className='text-red-600 font-bold'>${ listing.price}</span> </p>
+            <p
+              onClick={() => handleAddToWishlist(listing)}
+              className='absolute right-0 top-1/2 transform -translate-y-1/2 p-3 text-[18px] sm:text-[25px] text-gray-500 hover:text-red-700'><FaHeart />
+              </p>
           </div>
+        </div>
 
 
           ))}

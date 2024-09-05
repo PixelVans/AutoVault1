@@ -281,11 +281,11 @@ const handleSubmit = async (e) => {
           </div>
         </div>
 
-        <div className='mt-5'>
-          <div className='flex gap-2 flex-wrap'>
+        <div className='mt-5 '>
+          <div className='flex gap-2 flex-wrap mx-1'>
             <p className='font-bold pr-6'>Fuel Type:</p>
             Petrol <input
-              className='w-[20px]'
+              className='w-[15px] mt-1 sm:mt-0 sm:w-[20px]'
               id='petrol'
               required
               name='fueltype'
@@ -293,7 +293,7 @@ const handleSubmit = async (e) => {
               type="radio"
               value='petrol' />
             Electric <input
-              className='w-[20px]'
+              className='w-[15px] mt-1 sm:mt-0 sm:w-[20px]'
               id='electric'
               name='fueltype'
               required
@@ -301,7 +301,7 @@ const handleSubmit = async (e) => {
               type="radio"
               value='electric' />
             Diesel <input
-              className='w-[20px]'
+              className='w-[15px] mt-1 sm:mt-0 sm:w-[20px]'
               id='diesel'
               name='fueltype'
               onChange={handleChange}
@@ -309,18 +309,20 @@ const handleSubmit = async (e) => {
               required
               value='diesel' />
             Hybrid <input
-              className='w-[20px]'
+              className='w-[15px] mt-1 sm:mt-0 sm:w-[20px]'
               id='hybrid'
               name='fueltype'
               required
               onChange={handleChange}
               type="radio"
               value='hybrid' />
-          </div>
+          </div> <hr className="h-[1px] mt-1 bg-slate-400" />
+          
+
           <div className='flex gap-2 mt-4'>
             <p className='font-bold'>Transmission:</p>
             Manual <input
-              className='w-[20px]'
+              className='w-[15px] mt-1 sm:mt-0 sm:w-[20px]'
               id='manual'
               required
               name='transmission'
@@ -328,18 +330,19 @@ const handleSubmit = async (e) => {
               type="radio"
               value='manual' />
             Automatic <input
-              className='w-[20px]'
+              className='w-[15px] mt-1 sm:mt-0 sm:w-[20px]'
               id='automatic'
               required
               name='transmission'
               onChange={handleChange}
               type="radio"
               value='automatic' />
-          </div>
+          </div> <hr className="h-[2px] mt-1 bg-slate-400" />
+          
           <div className='flex gap-2 mt-4'>
             <p className='font-bold pr-6'>Condition:</p>
             New <input
-              className='w-[20px]'
+              className='w-[15px] mt-1 sm:mt-0 sm:w-[20px]'
               id='new'
               required
               name='condition'
@@ -347,21 +350,21 @@ const handleSubmit = async (e) => {
               type="radio"
               value='new' />
             Used <input
-              className='w-[20px]'
+              className='w-[15px] mt-1 sm:mt-0 sm:w-[20px]'
               id='used'
               required
               name='condition'
               onChange={handleChange}
               type="radio"
               value='used' />
-          </div>
+          </div>  <hr className="h-[2px] mt-1 bg-slate-300" />
 
 
 
-          <div className='flex gap-2 mt-4'>
+          <div className='flex gap-2 mt-4 mx-1 flex-wrap'>
             <p className='font-bold pr-6'>Category:</p>
             Bus <input
-              className='w-[20px]'
+              className='w-[15px] mt-1 sm:mt-0 sm:w-[20px]'
               id='bus'
               required
               name='category'
@@ -369,7 +372,7 @@ const handleSubmit = async (e) => {
               type="radio"
               value='bus' />
             Truck <input
-              className='w-[20px]'
+              className='w-[15px] mt-1 sm:mt-0 sm:w-[20px]'
               id='truck'
               required
               name='category'
@@ -377,7 +380,7 @@ const handleSubmit = async (e) => {
               type="radio"
               value='truck' />
             Nm-Car <input
-              className='w-[20px]'
+              className='w-[15px] mt-1 sm:mt-0 sm:w-[20px]'
               id='car'
               required
               name='category'
@@ -385,7 +388,7 @@ const handleSubmit = async (e) => {
               type="radio"
               value='car' />
             SUV <input
-              className='w-[20px]'
+              className='w-[15px] mt-1 sm:mt-0 sm:w-[20px]'
               id='suv'
               required
               name='category'
@@ -393,13 +396,14 @@ const handleSubmit = async (e) => {
               type="radio"
               value='suv' />
             
-           
-            
-          </div>
+          
+          </div>  <hr className="h-[2px] mt-1 bg-slate-300" />
+
+
           <div className='flex gap-2 mt-4'>
             <p className='font-bold pr-6'>Sports:</p>
             <p className="text-gray-800">optional</p> <input
-              className='w-[20px]'
+              className='w-[16px] mt-1 sm:mt-0 sm:w-[20px]'
               id='sports'
               name='sports'
               onChange={handleChange}
@@ -409,7 +413,7 @@ const handleSubmit = async (e) => {
             
            
             
-          </div>
+          </div>  <hr className="h-[2px] mt-1 bg-slate-300" />
 
           
 

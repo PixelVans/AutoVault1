@@ -17,12 +17,12 @@ export default function ViewCar() {
 
   return (
       <main className='max-w-[1200px] mx-auto p-2 shadow-md shadow-gray-900 mt-4'>
-          <div className='grid grid-cols-2'>
+          <div className='grid grid-cols-1 md:grid-cols-2'>
               <div className=' mt-5'>
                   <Swiper>
                       <SwiperSlide>
                           <div >
-                              <img className='object-cover w-full h-[428px]' src={listing.images} alt="" />
+                              <img className='object-cover w-full sm:h-[428px]' src={listing.images} alt="" />
                               {currentUser && listing.owner !== currentUser._id && !contact &&(
                                   <button onClick={() => setContact(true)}
                                       className='bg-slate-800 text-white
@@ -38,8 +38,8 @@ export default function ViewCar() {
                   </Swiper>  
           </div>
               <div className='bg-white mt-5'>
-                  <h1 className='text-center mt-3 text-2xl text-gray-900 font-semibold'> Vehicle Details</h1><hr></hr>
-                  <div className='bg-slate-50 px-9 m-5 grid grid-cols-2 p-2 shadow-black shadow-md'>
+                  <h1 className='text-center sm:mt-3 sm:mb-1 text-xl sm:text-2xl text-gray-900 font-semibold'> Vehicle Details</h1><hr></hr>
+                  <div className='bg-slate-50 px-5 sm:px-9 m-5 grid grid-cols-2 p-2 shadow-black shadow-sm'>
                       <div>
                        <h4 className='p-1 font-bold'>Title </h4>   
                        <h4 className='p-1 font-bold'>  Brand </h4>   
@@ -73,8 +73,9 @@ export default function ViewCar() {
                       
 
                   </div>
-                       <div className='bg-slate-100 mb-4 '>
-                       <h4 className='p-1 font-bold text-center'>  Description</h4>  
+                       <div className='bg-slate-100 mb-4 mx-2'>
+                      <h4 className='p-1 font-bold text-center'>  Description</h4>
+                      <hr className=' bg-slate-400 mb-2 p-[1px] mx-5' />
                        <h4 className='mx-9'>  { listing.description} </h4>    
                        </div>
               </div>
