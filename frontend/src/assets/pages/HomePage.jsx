@@ -114,10 +114,10 @@ const onShowMoreClick = async () => {
 
   return (
     <>
-    <div className='flex min-h-screen relative'>
-      <div className='bg-gray-900 h-[100px] w-full absolute z-[-1] mt-1 text-center text-white shadow-md shadow-black'>
-        <h1 className='text-[24px] font-bold mt-3'>Welcome to AutoVault!</h1>
-        <h4 className='text-[16px] text-red-500 '>Buy and sell vehicles with ease. Explore our platform for a seamless automotive experience!</h4>
+    <div className='flex min-h-screen relative mt-[-10px] md:mt-[0px]'>
+      <div className='bg-gray-900 h-[90px] w-full absolute z-[-1] md:mt-1 text-center text-slate-400 shadow-md shadow-black'>
+        <h1 className='sm:text-[20px] text-[17px] italic mt-3'>Discover Your Perfect Ride</h1>
+        <h4 className='text-[15px] font-extralight '>Happy tour!</h4>
 </div>
       
         
@@ -286,14 +286,14 @@ const onShowMoreClick = async () => {
         
         <div className='flex flex-wrap  w-full justify-center'>
            
-         <div className='w-full mt-[50px] p-2'>
-            <h1 className='text-center text-[21px] mx-auto w-full bg-slate-200 font-thin'>Featured Listings</h1>
+         <div className='w-full mt-[40px] sm:mt-[50px] p-2'>
+            <h1 className='text-center text-[17px] sm:text-[21px] mx-auto w-full bg-slate-100 font-thin'>{loading ? (
+              'Loading...'
+          ) : 'Featured Listings' }</h1>
             <hr className='border-0 h-[1px] bg-gray-400' />
 </div>
 
-          {loading ? (
-              <h1 className='text-center text-[25px] mx-auto w-full'>Loading...</h1> 
-          ) : '' }
+          
         
           {recentListings&& recentListings.map((listing, index) => (
             

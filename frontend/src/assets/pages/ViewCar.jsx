@@ -26,7 +26,7 @@ export default function ViewCar() {
                               {currentUser && listing.owner !== currentUser._id && !contact &&(
                                   <button onClick={() => setContact(true)}
                                       className='bg-slate-800 text-white
-                                       rounded-lg uppercase hover:opacity-85 p-3 w-full mx-auto text-center mt-3'>
+                                       rounded-lg uppercase hover:opacity-85 p-2 sm:p-3 w-full mx-auto text-center mt-3 text-[13px] sm:text-[16px]'>
                 Contact Owner
               </button>
                               )}

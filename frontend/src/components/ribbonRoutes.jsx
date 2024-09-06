@@ -45,7 +45,7 @@ export const MyListingsComponent = () => {
     <div onClick={handleMyListings}
                   className='bg-slate-800 md:bg-none h-[30px] sm:h-[43px] w-[90px] sm:w-[125px] text-[10px] sm:text-[15px] border
                    border-gray-600 sm:border-gray-450   gap-1
-                   flex items-center justify-center text-white hover:h-[35px] md:hover:h-[47px] hover:bg-slate-800 transition duration-300 rounded-sm cursor-pointer'>
+                   flex items-center justify-center text-white hover:bg-slate-900 transition duration-300 rounded-sm cursor-pointer'>
                
           {loading? (<h1>loading...</h1>) : (<h1>My Listings</h1>)}
           

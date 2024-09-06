@@ -50,7 +50,7 @@ export default function Header() {
 
 
     return (
-        <header className='bg-gray-100 p-[13px] sm:p-4 shadow-md'>
+        <header className='bg-gray-800 p-[13px] sm:p-4 shadow-md'>
             <div className='flex justify-between sm:max-w-[1300px] mx-auto'>
                   
                 {/* <div className='mt-1 '>
@@ -66,9 +66,9 @@ export default function Header() {
 <div className='relative mx-2 z-0 block sm:hidden'>
           {!isMenuOpen && (
             <div onClick={toggleMenu} className='block sm:hidden cursor-pointer'>
-              <div className='h-[2px] w-[23px] bg-slate-700 my-1'></div>
-              <div className='h-[2px] w-[23px] bg-slate-700 my-1'></div>
-              <div className='h-[2px] w-[23px] bg-slate-700 my-1'></div>
+              <div className='h-[2px] w-[23px] bg-slate-500 my-1'></div>
+              <div className='h-[2px] w-[23px] bg-slate-500 my-1'></div>
+              <div className='h-[2px] w-[23px] bg-slate-500 my-1'></div>
             </div>
           )}
         </div>
@@ -77,15 +77,16 @@ export default function Header() {
 
 
 
-                <Link to='/'>
-                    <div className='flex '>
+                <Link to='/home'>
+                    <div className='flex text-white'>
                         <h1 className='font-bold text-[17px] sm:text-[22px] text-center'>AutoVault  </h1>
                         <img className='bg-wheel h-[23px] w-[23px] sm:h-[33px] sm:w-[33px] mx-2 my-auto animate-rotate' src='../../public/images/wheel.png' alt='Rotating wheel'/>
                    </div>
                 </Link>
-                <form onSubmit={handleSubmit} className='bg-white rounded-lg hidden md:flex sm:w-[350px]'>
+                <form onSubmit={handleSubmit} className=' bg-gray-700 rounded-lg hidden md:flex sm:w-[350px]'>
                     <input
-                        className='p-[7px] sm:p-2 rounded-lg w-[140px] sm:w-[300px] focus:outline-none m-auto ml-3'
+                        className='p-[7px] sm:p-2 rounded-lg w-[140px] sm:w-[300px]
+                        bg-gray-700 focus:outline-none m-auto ml-3 text-white'
                         type="text"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
@@ -95,7 +96,7 @@ export default function Header() {
                         <FaSearch />
                     </button>
                 </form>
-                <div className='flex gap-2 sm:gap-6 items-center'>
+                <div className='flex gap-2 sm:gap-6 items-center text-white font-extralight'>
                     <Link to='/'>
                         <h1 className='hidden sm:inline-block'>Home</h1>
                     </Link>
@@ -104,7 +105,7 @@ export default function Header() {
                     </Link>
                     {isAuthenticated ? (
                         <Link to='profile'>
-                            <img className='rounded-full h-[30px] w-[30px] object-cover' src={userData.avatar} alt='User Avatar' />
+                            <img className='rounded-full h-[30px] w-[30px] object-cover shadow-md shadow-white' src={userData.avatar} alt='User Avatar' />
                         </Link>
                     ) : (
                         <Link to='sign-in'>
@@ -115,15 +116,17 @@ export default function Header() {
             </div>
 
             <div>
-            <form onSubmit={handleSubmit} className='bg-white rounded-lg flex md:hidden  mt-2'>
+                <form onSubmit={handleSubmit} className='bg-gray-800 rounded-lg flex md:hidden 
+            focus-border-gray-100 mt-3 border border-slate-700'>
                     <input
-                        className='p-[7px] sm:p-2 rounded-lg w-[140px] sm:w-[300px] focus:outline-none m-auto ml-3'
+                        className='p-[7px] sm:p-2 rounded-lg w-[140px] sm:w-[300px] 
+                        text-white focus:outline-none m-auto ml-3 bg-gray-800'
                         type="text"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         placeholder='Search vehicles ...'
                     />
-                    <button className='mr-3 text-gray-300'>
+                    <button className='mr-3 text-gray-400'>
                         <FaSearch />
                     </button>
                 </form>

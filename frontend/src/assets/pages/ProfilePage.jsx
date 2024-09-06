@@ -235,10 +235,10 @@ export default function ProfilePage() {
 
       
 
-      <div className=' h-[80px] w-[80px] mx-auto mt-6'>
+      <div className=' h-[80px] w-[80px] mx-auto mt-6 shadow-lg shadow-white'>
   <img
     onClick={() => fileRef.current.click()}
-    className='h-[80px] w-[80px] rounded-full object-cover'
+    className='h-[80px] w-[80px] rounded-full object-cover '
     src={formData.avatar ?formData.avatar: userData.avatar}
     alt="avatar"
   />

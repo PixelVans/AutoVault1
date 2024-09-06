@@ -5,10 +5,12 @@
 
 body{
     background-color: #f9f8f7;
+    
 }
 html, body {
     height: 100%;
     margin: 0;
+  
   }
   
  .parent {

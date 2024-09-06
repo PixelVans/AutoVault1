@@ -16,10 +16,14 @@ export default {
         'suv': "url('./public/images/suvvv.jpg')",
         'truck': "url('./public/images/trucksss.jpg')",
         'theme': "url('./public/images/theme.jpg')",
+        'shake': "url('./public/images/shake.png')",
+        'spedom': "url('./public/images/spedom.png')",
+        'dash': "url('./public/images/dash.png')",
         'orange-gradient': 'linear-gradient(to bottom, #F57F17, #F8B400)',
       },
       animation: {
-        rotate: 'rotate 3s linear infinite',
+        rotate: 'rotate 4s linear infinite',
+        rot: 'rotate 8s linear infinite',
       },
       keyframes: {
         rotate: {
