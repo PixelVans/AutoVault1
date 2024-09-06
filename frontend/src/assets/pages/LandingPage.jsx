@@ -26,7 +26,7 @@ export default function LandingPage() {
     </div>
 </div> 
                 {/* Animated Image */}
-      <div className='absolute sm:hidden inset-0 flex justify-center items-center top-[-450px]'>
+      <div className='absolute sm:hidden inset-0 flex justify-center items-center top-[-470px]'>
         <img 
           className='bg-wheel h-[100px] w-[100px] sm:h-[33px] sm:w-[33px] mx-2 my-auto animate-rotate'
           src='/images/wheel.png' 
@@ -35,13 +35,13 @@ export default function LandingPage() {
                  
                   
       </div>
-               <div className='absolute sm:hidden inset-0 flex justify-center items-center top-[-250px]'>
+               <div className='absolute sm:hidden inset-0 flex justify-center items-center top-[-270px]'>
                   <img className='w-[100px]' src="/images/biz.png" alt="" />   
                   
                   </div>
-              <div className='absolute top-[290px] text-white sm:ml-5 mt-5 sm:mt-0'>
+              <div className='absolute top-[290px] text-white sm:ml-5 mt-[30px] sm:mt-0'>
                  
-                  <h1 data-aos='fade-up ' data-aos-delay='700' className='text-[25px] md:text-[50px] text-slate-100  '>
+                  <h1 data-aos='fade-up ' data-aos-delay='700' className='text-[20px] md:text-[50px] text-slate-100  '>
                       Welcome <span data-aos='zoom-in ' data-aos-delay='1300'>to</span > <span data-aos='zoom-in ' data-aos-delay='1600'>AutoVault</span></h1> <br />
                   <p className='font-extralight text-slate-400 mr-5 text-[13px] sm:text-[17px]'>
                       At AutoVault, our mission is to simplify the process of buying and
@@ -56,7 +56,7 @@ export default function LandingPage() {
                   </button>
 
                   {/* car logos */}
-                  <div className='flex mt-[80px] md:mt-[80px] gap-[10px] flex-wrap'>
+                  <div className='flex mt-[60px] md:mt-[80px] gap-[10px] flex-wrap'>
   <img data-aos="fade-up" data-aos-delay="100" data-aos-once="true" className='w-[30px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/1.png" alt="" />
   <img data-aos="fade-up" data-aos-delay="300" data-aos-once="true" className='w-[40px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/2.png" alt="" />
   <img data-aos="fade-up" data-aos-delay="500" data-aos-once="true" className='w-[30px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/3.png" alt="" />

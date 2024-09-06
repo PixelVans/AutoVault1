@@ -10,16 +10,16 @@ export default {
     extend: {
       backgroundImage: {
         'supercar': "url('./images/supercars.png')",
-        'bus': "url('./images/busesss.jpg')",
-        'el': "url('./images/electicc.jpg')",
-        'ell': "url('./images/electiccc.jpg')",
-        'suv': "url('./images/suvvv.jpg')",
-        'truck': "url('./images/trucksss.jpg')",
-        'theme': "url('./images/theme.jpg')",
-        'shake': "url('./images/shake.png')",
-        'spedom': "url('./images/spedom.png')",
-        'dash': "url('./images/dash.png')",
-        'orange-gradient': 'linear-gradient(to bottom, #F57F17, #F8B400)',
+        'bus': "url('/images/busesss.jpg')",
+        'el': "url('/images/electicc.jpg')",
+        'ell': "url('/images/electiccc.jpg')",
+        'suv': "url('/images/suvvv.jpg')",
+        'truck': "url('/images/trucksss.jpg')",
+        'theme': "url('/images/theme.jpg')",
+        'shake': "url('/images/shake.png')",
+        'spedom': "url('/images/spedom.png')",
+        'dash': "url('/images/dash.png')",
+      
       },
       animation: {
         rotate: 'rotate 4s linear infinite',
