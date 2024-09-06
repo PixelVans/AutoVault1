@@ -45,7 +45,7 @@ export default function Footer() {
     return (
     
     <div 
-      className='text-black  mb-2 bg-slate-50 mt-[100px] shadow-md'>
+      className='text-black  mb-2 bg-slate-100 mt-[100px]  shadow-top'>
           <div className='container'>  
               {/* company details */}
               <div
