@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
  import { useNavigate } from 'react-router-dom'
  import { useDispatch } from 'react-redux';
 import { loggedIn } from '../../../redux/userSlice';
-import GoogleSignUp from '../../components/googleSignUp';
+import GoogleSignUp from '../../components/GoogleSignUp';
 
 
 
