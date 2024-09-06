@@ -296,7 +296,7 @@ const onShowMoreClick = async () => {
           
 <div className='grid grid-cols-2 sm:flex flex-wrap w-full gap-2 justify-center'>
   {recentListings && recentListings.map((listing, index) => (
-    <div key={index} data-aos='zoom-in' className='col-span-1 h-[210px] md:w-[240px] md:h-[250px] m-1 mx-2 bg-slate-100 rounded-sm shadow-black shadow-md ml-1 overflow-hidden'>
+    <div key={index} data-aos='zoom-in' className='col-span-1 h-[210px] md:w-[240px] md:h-[250px] m-1 ml-2 mr-2  bg-slate-100 rounded-sm shadow-black shadow-md  overflow-hidden'>
       <img 
         onClick={() => handlegetListing(listing._id)} 
         className='h-[120px] w-full object-cover hover:scale-105 transition-scale duration-300 md:h-[160px] md:w-[240px]' 

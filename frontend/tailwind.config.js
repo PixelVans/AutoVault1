@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'supercar': "url('./images/supercars.png')",
+        'supercar': "url('/images/supercars.png')",
         'bus': "url('/images/busesss.jpg')",
         'el': "url('/images/electicc.jpg')",
         'ell': "url('/images/electiccc.jpg')",

@@ -26,7 +26,7 @@ export default function LandingPage() {
     </div>
 </div> 
                 {/* Animated Image */}
-      <div className='absolute sm:hidden inset-0 flex justify-center items-center top-[-470px]'>
+      <div className='absolute sm:hidden inset-0 flex justify-center items-center top-[-480px]'>
         <img 
           className='bg-wheel h-[100px] w-[100px] sm:h-[33px] sm:w-[33px] mx-2 my-auto animate-rotate'
           src='/images/wheel.png' 
@@ -35,15 +35,15 @@ export default function LandingPage() {
                  
                   
       </div>
-               <div className='absolute sm:hidden inset-0 flex justify-center items-center top-[-270px]'>
+               <div className='absolute sm:hidden inset-0 flex justify-center items-center top-[-290px]'>
                   <img className='w-[100px]' src="/images/biz.png" alt="" />   
                   
                   </div>
-              <div className='absolute top-[290px] text-white sm:ml-5 mt-[30px] sm:mt-0'>
+              <div className='absolute top-[290px] text-white sm:ml-5 mt-[35px] sm:mt-0'>
                  
-                  <h1 data-aos='fade-up ' data-aos-delay='700' className='text-[20px] md:text-[50px] text-slate-100  '>
+                  <h1 data-aos='fade-up ' data-aos-delay='700' className='text-[23px] md:text-[50px]  text-slate-100  '>
                       Welcome <span data-aos='zoom-in ' data-aos-delay='1300'>to</span > <span data-aos='zoom-in ' data-aos-delay='1600'>AutoVault</span></h1> <br />
-                  <p className='font-extralight text-slate-400 mr-5 text-[13px] sm:text-[17px]'>
+                  <p className='font-extralight text-slate-300 mr-5 text-[13px] sm:text-[17px]'>
                       At AutoVault, our mission is to simplify the process of buying and
                       selling vehicles. <br/> Whether you're searching for your next dream car
                       or looking to sell your current ride, we've got you covered. <br/> 
