@@ -39,7 +39,7 @@ export default function LandingPage() {
                   <img className='w-[100px]' src="/images/biz.png" alt="" />   
                   
                   </div>
-              <div className='absolute top-[290px] text-white sm:ml-5'>
+              <div className='absolute top-[290px] text-white sm:ml-5 mt-5 sm:mt-0'>
                  
                   <h1 data-aos='fade-up ' data-aos-delay='700' className='text-[25px] md:text-[50px] text-slate-100  '>
                       Welcome <span data-aos='zoom-in ' data-aos-delay='1300'>to</span > <span data-aos='zoom-in ' data-aos-delay='1600'>AutoVault</span></h1> <br />

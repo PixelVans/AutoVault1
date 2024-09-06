@@ -302,9 +302,9 @@ export default function Search() {
            
               
          
-          <div key={index} className=' w-[160px] h-[210px] md:w-[240px] md:h-[250px] m-1 bg-slate-100 rounded-sm shadow-black shadow-md ml-1 overflow-hidden'>
+          <div key={index} className=' w-[170px] h-[210px] md:w-[240px] md:h-[250px] m-1 bg-slate-100 rounded-sm shadow-black shadow-md ml-1 overflow-hidden'>
              
-          <img onClick={() =>handlegetListing(listing._id)} className='h-[120px] w-[160px] md:h-[160px] md:w-[240px] object-cover hover:scale-105 transition-scale duration-300 ' src={listing.images[0]}></img>
+          <img onClick={() =>handlegetListing(listing._id)} className='h-[120px] w-[170px] md:h-[160px] md:w-[240px] object-cover hover:scale-105 transition-scale duration-300 ' src={listing.images[0]}></img>
           <div className='relative'>
           <p className='font-bold text-gray-950 ml-2 text-[12px] sm:text-[16px]'>{ listing.title}</p> <hr/>
           <p className='text-[12px] ml-2 mt-1'><span className='font-bold'>Year:</span> { listing.year}</p>

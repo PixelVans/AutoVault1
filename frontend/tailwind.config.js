@@ -9,16 +9,16 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'supercar': "url('./public/images/supercars.png')",
-        'bus': "url('./public/images/busesss.jpg')",
-        'el': "url('./public/images/electicc.jpg')",
-        'ell': "url('./public/images/electiccc.jpg')",
-        'suv': "url('./public/images/suvvv.jpg')",
-        'truck': "url('./public/images/trucksss.jpg')",
-        'theme': "url('./public/images/theme.jpg')",
-        'shake': "url('./public/images/shake.png')",
-        'spedom': "url('./public/images/spedom.png')",
-        'dash': "url('./public/images/dash.png')",
+        'supercar': "url('./images/supercars.png')",
+        'bus': "url('./images/busesss.jpg')",
+        'el': "url('./images/electicc.jpg')",
+        'ell': "url('./images/electiccc.jpg')",
+        'suv': "url('./images/suvvv.jpg')",
+        'truck': "url('./images/trucksss.jpg')",
+        'theme': "url('./images/theme.jpg')",
+        'shake': "url('./images/shake.png')",
+        'spedom': "url('./images/spedom.png')",
+        'dash': "url('./images/dash.png')",
         'orange-gradient': 'linear-gradient(to bottom, #F57F17, #F8B400)',
       },
       animation: {
