@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function FaQ() {
   return (
-    <div>FaQ</div>
+    <div className='text-center h-screen'>FaQ</div>
   )
 }

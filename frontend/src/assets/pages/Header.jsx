@@ -78,7 +78,7 @@ export default function Header() {
 
 
                 <Link to='/home'>
-                    <div className='flex text-white'>
+                    <div className='flex text-slate-200'>
                         <h1 className='font-bold text-[17px] sm:text-[22px] text-center'>AutoVault  </h1>
                         <img className='bg-wheel h-[23px] w-[23px] sm:h-[33px] sm:w-[33px] mx-2 my-auto animate-rotate' src='../../images/wheel.png' alt='Rotating wheel'/>
                    </div>

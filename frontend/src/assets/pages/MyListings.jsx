@@ -55,7 +55,7 @@ export default function MyListings() {
 
   // Handle cases where myListings might be undefined or empty
   if (!userListings || userListings.length === 0) {
-    return <p>No listings available.</p>;
+    return <p className='text-center h-screen'>No listings available.</p>;
   }
 
   return (
@@ -104,7 +104,7 @@ export default function MyListings() {
             </div>
           ))
         ) : (
-          <p className='text-center w-full'>No listings found.</p>
+          <p className='text-center w-full '>No listings found.</p>
         )}
       </div>
     </div>

@@ -115,10 +115,10 @@ const onShowMoreClick = async () => {
   return (
     <>
     <div className='flex min-h-screen relative mt-[-10px] md:mt-[0px]'>
-      <div className='bg-gray-900 h-[90px] w-full absolute z-[-1] md:mt-1 text-center text-slate-400 shadow-md shadow-black'>
+      <div className='bg-gray-800 h-[90px] w-full absolute z-[-1] md:mt-1 text-center text-slate-200 shadow-md shadow-black'>
         <h1  data-aos='zoom-in' className='sm:text-[20px] text-[17px] italic mt-3'>Discover Your Perfect Ride</h1>
-        <h4 className='text-[15px] font-extralight '>Happy tour!</h4>
-</div>
+        <h4 className='text-[15px] font-extralight '>Bonne découverte !</h4>
+        </div>
       
         
               <div className='bg-gray-800 min-h-screen mt-1 max-w-[470px] hidden sm:flex flex-col shadow-lg'>
@@ -328,13 +328,14 @@ const onShowMoreClick = async () => {
          
        </div>
 
-       {showMore && (
-            <button
+          {showMore && (
+            <div className='justify-center text-center mx-auto mt-5'> <button
               onClick={onShowMoreClick}
-              className='text-green-700 hover:underline p-7 text-center w-full text-[18px]'
+              className='text-white hover:bg-slate-950 p-1 px-5 w-[100px] text-center m text-[18px] bg-slate-800 mt-5 rounded-xl'
             >
-              Show more
-            </button>
+              Next
+            </button></div>
+           
         )}
    
       </div>

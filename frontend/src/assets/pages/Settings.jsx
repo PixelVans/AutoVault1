@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Settings() {
   return (
-    <div>Settings</div>
+    <div className='text-center h-screen'>Settings</div>
   )
 }

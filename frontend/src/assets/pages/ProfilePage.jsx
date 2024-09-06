@@ -135,7 +135,7 @@ export default function ProfilePage() {
       dispatch(loggedIn(data))
    setloading(false)
      
-     navigate('/'); 
+     navigate('/home'); 
    }
    
    catch (error) {

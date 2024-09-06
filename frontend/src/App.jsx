@@ -28,6 +28,7 @@ import UpdateCarListing from './assets/pages/UpdateCarListing';
 import ViewCar from './assets/pages/ViewCar';
 import Search from './assets/pages/Search';
 import LandingPage from './assets/pages/LandingPage';
+import Footer from './components/Footer';
 
 export default function App() {
  
@@ -70,6 +71,7 @@ export default function App() {
           <Route path="/update-listing/:id" element={<UpdateCarListing />} />
         </Route>
       </Routes>
+       <FooterPage/>
     </BrowserRouter>
   );
 }
@@ -85,6 +87,24 @@ function LayoutWithConditionalHeader() {
       <>
         <Header />
         <HomeRibbon />
+       
+      </>
+    );
+  }
+  return null;
+}
+
+function FooterPage() {
+  const location = useLocation();
+  const hideHeaderAndRibbonRoutes = ['/'];
+
+  // Conditionally render the Header and HomeRibbon based on the current route
+  if (!hideHeaderAndRibbonRoutes.includes(location.pathname)) {
+    return (
+      <>
+        <Footer />
+        
+       
       </>
     );
   }
