@@ -26,7 +26,7 @@ export default function LandingPage() {
     </div>
 </div> 
                 {/* Animated Image */}
-      <div className='absolute sm:hidden inset-0 flex justify-center items-center top-[-410px]'>
+      <div className='absolute sm:hidden inset-0 flex justify-center items-center top-[-450px]'>
         <img 
           className='bg-wheel h-[100px] w-[100px] sm:h-[33px] sm:w-[33px] mx-2 my-auto animate-rotate'
           src='/images/wheel.png' 
@@ -41,7 +41,8 @@ export default function LandingPage() {
                   </div>
               <div className='absolute top-[290px] text-white sm:ml-5'>
                  
-              <h1 className='text-[25px] md:text-[50px] text-slate-100  '>Welcome to AutoVault</h1> <br />
+                  <h1 data-aos='fade-up ' data-aos-delay='700' className='text-[25px] md:text-[50px] text-slate-100  '>
+                      Welcome <span data-aos='zoom-in ' data-aos-delay='1300'>to</span > <span data-aos='zoom-in ' data-aos-delay='1600'>AutoVault</span></h1> <br />
                   <p className='font-extralight text-slate-400 mr-5 text-[13px] sm:text-[17px]'>
                       At AutoVault, our mission is to simplify the process of buying and
                       selling vehicles. <br/> Whether you're searching for your next dream car
@@ -55,17 +56,17 @@ export default function LandingPage() {
                   </button>
 
                   {/* car logos */}
-              <div className='flex mt-[80px] md:mt-[100px] gap-[10px]   flex-wrap'>
-                 <img className='w-[30px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/1.png" alt="" />
-                 <img className='w-[40px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/2.png" alt="" />
-                 <img className='w-[30px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/3.png" alt="" />
-                 <img className='w-[30px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/4.png" alt="" />
-                 <img className='w-[25px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/5.png" alt="" />
-                 <img className='w-[25px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/6.png" alt="" />
-                 <img className='w-[25px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/7.png" alt="" />
-                 
-               
-              </div>
+                  <div className='flex mt-[80px] md:mt-[80px] gap-[10px] flex-wrap'>
+  <img data-aos="fade-up" data-aos-delay="100" data-aos-once="true" className='w-[30px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/1.png" alt="" />
+  <img data-aos="fade-up" data-aos-delay="300" data-aos-once="true" className='w-[40px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/2.png" alt="" />
+  <img data-aos="fade-up" data-aos-delay="500" data-aos-once="true" className='w-[30px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/3.png" alt="" />
+  <img data-aos="fade-up" data-aos-delay="700" data-aos-once="true" className='w-[30px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/4.png" alt="" />
+  <img data-aos="fade-up" data-aos-delay="900" data-aos-once="true" className='w-[25px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/5.png" alt="" />
+  <img data-aos="fade-up" data-aos-delay="1000" data-aos-once="true" className='w-[25px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/6.png" alt="" />
+  <img data-aos="fade-up" data-aos-delay="1200" data-aos-once="true" className='w-[25px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/7.png" alt="" />
+</div>
+
+
               </div>
               
 

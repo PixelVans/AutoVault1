@@ -116,7 +116,7 @@ const onShowMoreClick = async () => {
     <>
     <div className='flex min-h-screen relative mt-[-10px] md:mt-[0px]'>
       <div className='bg-gray-900 h-[90px] w-full absolute z-[-1] md:mt-1 text-center text-slate-400 shadow-md shadow-black'>
-        <h1 className='sm:text-[20px] text-[17px] italic mt-3'>Discover Your Perfect Ride</h1>
+        <h1  data-aos='zoom-in' className='sm:text-[20px] text-[17px] italic mt-3'>Discover Your Perfect Ride</h1>
         <h4 className='text-[15px] font-extralight '>Happy tour!</h4>
 </div>
       
@@ -128,7 +128,7 @@ const onShowMoreClick = async () => {
    
         
         {/* Card */}
-        <div
+        <div data-aos='zoom-in'
           onClick={()=>handleSportsCars('true')}
           className='hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out  cursor-pointer'>
         <div className='border border-gray-700 text-center p-2 mt-5 border-t-0 bg-supercar h-[35px] shadow-lg'></div>
@@ -141,7 +141,7 @@ const onShowMoreClick = async () => {
         
         
         {/* Card */}
-        <div
+        <div data-aos='zoom-in'
            onClick={()=>handleSortCars('bus')}
           className='hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out cursor-pointer'>
         <div className='border border-gray-700 text-center p-2 mt-5 border-t-0 bg-bus h-[35px]'></div>
@@ -154,7 +154,7 @@ const onShowMoreClick = async () => {
         
         
         {/* Card */}
-        <div
+        <div data-aos='zoom-in'
            onClick={()=>handleSortCars('truck')}
           className='hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out cursor-pointer'>
         <div className='border border-gray-700 text-center p-2 mt-5 border-t-0 bg-truck h-[35px]'></div>
@@ -167,7 +167,7 @@ const onShowMoreClick = async () => {
         
         
         {/* Card */}
-        <div
+        <div data-aos='zoom-in'
            onClick={()=>handleSortCars('suv')}
           className='hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out cursor-pointer'>
         <div className='border border-gray-700 text-center p-2 mt-5 border-t-0 bg-suv h-[35px]'></div>
@@ -180,7 +180,7 @@ const onShowMoreClick = async () => {
         
         
         {/* Card */}
-        <div
+        <div data-aos='zoom-in'
            onClick={()=>handleFuelType('electric')}
           className='hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out cursor-pointer'>
         <div className='border border-gray-700 text-center p-2 mt-5 border-t-0 bg-ell h-[35px]'></div>
@@ -193,7 +193,7 @@ const onShowMoreClick = async () => {
           <h1 className='text-gray-400  text-center  font-bold text-[18px]'>Popular Brands</h1>
         </div>
 
-        <div
+        <div data-aos='zoom-in'
           onClick={()=>handleCarBrand('toyota')}
           className='border border-gray-700 border-t-0 text-center 
           p-1 cursor-default hover:scale-x-110 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
@@ -201,7 +201,7 @@ const onShowMoreClick = async () => {
         </div>
 
 
-        <div
+        <div data-aos='zoom-in'
         onClick={()=>handleCarBrand('mercedez')}
           className='border border-gray-700 border-t-0 text-center mt-2  
            p-1 cursor-default hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
@@ -209,49 +209,49 @@ const onShowMoreClick = async () => {
         </div>
 
 
-        <div
+        <div data-aos='zoom-in'
           onClick={()=>handleCarBrand('nissan')}
           className='border border-gray-700 border-t-0 text-center 
            p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Nissan</h1>
         </div>
         
-        <div
+        <div data-aos='zoom-in'
          onClick={()=>handleCarBrand('audi')}
           className='border border-gray-700 border-t-0 text-center 
            p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Audi</h1>
         </div>
       
-        <div
+        <div data-aos='zoom-in'
           onClick={()=>handleCarBrand('bmw')}
           className='border border-gray-700 border-t-0 text-center 
            p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>BMW</h1>
         </div>
         
-        <div
+        <div data-aos='zoom-in'
         onClick={()=>handleCarBrand('land rover')}
           className='border border-gray-700 border-t-0 text-center 
            p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Land Rover</h1>
         </div>
         
-        <div
+        <div data-aos='zoom-in'
           onClick={()=>handleCarBrand('ford')}
           className='border border-gray-700 border-t-0 text-center 
            p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Ford</h1>
         </div>
         
-        <div
+        <div data-aos='zoom-in'
         onClick={()=>handleCarBrand('volks wagen')}
           className='border border-gray-700 border-t-0 text-center
             p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Volks Wagen</h1>
         </div>
 
-        <div
+        <div data-aos='zoom-in'
           onClick={()=>handleCarBrand('subaru')}
           className='border border-gray-700 border-t-0 text-center 
            p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
@@ -259,7 +259,7 @@ const onShowMoreClick = async () => {
         </div>
         
         
-        <div
+        <div data-aos='zoom-in'
         onClick={()=>handleCarBrand('mazda')}
           className='border border-gray-700 border-t-0 text-center 
            p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
@@ -299,9 +299,9 @@ const onShowMoreClick = async () => {
             
            
               
-            <div key={index} className=' w-[160px] h-[210px] md:w-[240px] md:h-[250px] m-1 bg-slate-100 rounded-sm shadow-black shadow-md ml-1 overflow-hidden'>
+            <div data-aos='zoom-in' key={index} className=' w-[160px] h-[210px] md:w-[240px] md:h-[250px] m-1 bg-slate-100 rounded-sm shadow-black shadow-md ml-1 overflow-hidden'>
              
-              <img onClick={() =>handlegetListing(listing._id)} className='h-[120px] w-[160px] md:h-[160px] md:w-[240px] object-cover hover:scale-105 transition-scale duration-300 ' src={listing.images[0]}></img>
+              <img   onClick={() =>handlegetListing(listing._id)} className='h-[120px] w-[160px] md:h-[160px] md:w-[240px] object-cover hover:scale-105 transition-scale duration-300 ' src={listing.images[0]}></img>
               <div className='relative'>
               <p className='font-bold text-gray-950 ml-2 text-[12px] sm:text-[16px]'>{ listing.title}</p> <hr/>
               <p className='text-[12px] ml-2 mt-1'><span className='font-bold'>Year:</span> { listing.year}</p>

@@ -2,7 +2,7 @@ import express from 'express'
 
 import cookieParser from 'cookie-parser'
 // Middleware to parse cookies
-
+import path from 'path'
 
 const app = express();
 import mongoose from 'mongoose'
@@ -27,7 +27,11 @@ mongoose.connect(process.env.MONGODB_URI)
 
 
 
+    app.use(express.static(path.join(__dirname, '/frontend/dist')));
 
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname,'frontend','dist','index.html'))
+    })
 
     app.use((err, req, res, next) => {
         const statusCode = err.statusCode || 500;
