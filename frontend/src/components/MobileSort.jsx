@@ -34,8 +34,8 @@ export default function MobileSort({ toggleMenu, isMenuOpen }) {
       onClick={toggleMenu}
       className='absolute top-4 left-4 cursor-pointer text-white text-3xl mt-3'
     >
-      <div className='h-[3px] w-[23px] bg-slate-100 transform rotate-45'></div>
-      <div className='h-[3px] w-[23px] bg-slate-100 transform -rotate-45'></div>
+      <div className='h-[3px] w-[23px] bg-slate-400 transform rotate-45'></div>
+      <div className='h-[3px] w-[23px] bg-slate-400 transform -rotate-45'></div>
     </div>
           <div className='p-4 mt-12'>
               
@@ -48,7 +48,7 @@ export default function MobileSort({ toggleMenu, isMenuOpen }) {
         
         
       <Link to={'/settings'}>
-            <div
+            <div data-aos='zoom-in ' data-aos-delay='100'
                   className=' mt-3  h-[30px] sm:h-[43px] w-full sm:w-[125px] text-[14px]  border
                   border-gray-700 sm:border-gray-450 border-x-0 
                   items-center justify-center text-white  hover:bg-slate-950  rounded-sm'>
@@ -58,7 +58,7 @@ export default function MobileSort({ toggleMenu, isMenuOpen }) {
 
 
       <Link to={'/notifications'}>
-            <div
+            <div data-aos='zoom-in ' data-aos-delay='300'
                   className='   h-[30px] sm:h-[43px] w-full sm:w-[125px] text-[14px]  border
                   border-gray-700 sm:border-gray-450 border-x-0 mt-3
                   items-center justify-center text-white  hover:bg-slate-950  rounded-sm'>
@@ -69,7 +69,7 @@ export default function MobileSort({ toggleMenu, isMenuOpen }) {
 
           
       <Link to={'/news'}>
-            <div
+            <div data-aos='zoom-in ' data-aos-delay='500'
                   className='   h-[30px] sm:h-[43px] w-full sm:w-[125px] text-[14px]  border
                   border-gray-700 sm:border-gray-450 border-x-0 mt-3
                   items-center justify-center text-white  hover:bg-slate-950  rounded-sm'>
@@ -79,7 +79,7 @@ export default function MobileSort({ toggleMenu, isMenuOpen }) {
 
 
       <Link to={'/faq'}>
-            <div
+            <div data-aos='zoom-in ' data-aos-delay='700'
                   className='   h-[30px] sm:h-[43px] w-full sm:w-[125px] text-[14px]  border
                   border-gray-700 sm:border-gray-450 border-x-0 mt-3
                   items-center justify-center text-white  hover:bg-slate-950  rounded-sm'>
@@ -90,7 +90,7 @@ export default function MobileSort({ toggleMenu, isMenuOpen }) {
 
 
       <Link to={'/help'}>
-            <div
+            <div  data-aos='zoom-in ' data-aos-delay='900'
                   className='   h-[30px] sm:h-[43px] w-full sm:w-[125px] text-[14px]  border
                   border-gray-700 sm:border-gray-450 border-x-0 mt-3
                   items-center justify-center text-white  hover:bg-slate-950  rounded-sm'>
