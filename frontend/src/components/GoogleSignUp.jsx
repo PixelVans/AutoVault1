@@ -59,10 +59,10 @@ export default function GoogleSignUp() {
       <button
           onClick={ handleGoogleSignUp}
        type='button'
-            className="bg-slate-300 w-[300px] sm:w-[330px]
-     text-black p-1 mt-2 text-center rounded-lg hover:opacity-90 shadow-sm shadow-black"
+            className="bg-slate-200 w-[300px] sm:w-[330px]
+     text-black p-[6px] mt-2 text-center rounded-lg hover:opacity-90 shadow-sm shadow-black"
   >  
-          <h4 className='flex justify-center text-center text-[17px] sm:text-xl '>continue with <span className='ml-3'>
+          <h4 className='flex justify-center text-center text-[17px] sm:text-xl '>Continue with <span className='ml-3'>
               <FcGoogle className=" text-[17px] sm:text-xl mt-[5px]" /></span>oogle</h4>
   </button>
   )
