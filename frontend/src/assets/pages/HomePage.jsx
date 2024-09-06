@@ -130,7 +130,8 @@ const onShowMoreClick = async () => {
         {/* Card */}
         <div data-aos='zoom-in'
           onClick={()=>handleSportsCars('true')}
-          className='hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out  cursor-pointer'>
+            className='hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out  cursor-pointer'>
+            
         <div className='border border-gray-700 text-center p-2 mt-5 border-t-0 bg-supercar h-[35px] shadow-lg'></div>
         <div className='border border-gray-700 border-t-0 text-center p-1'>
           <h1 className='text-gray-400 text-center  text-[18px]'>Need For Speed</h1>
@@ -196,7 +197,7 @@ const onShowMoreClick = async () => {
         <div data-aos='zoom-in'
           onClick={()=>handleCarBrand('toyota')}
           className='border border-gray-700 border-t-0 text-center 
-          p-1 cursor-default hover:scale-x-110 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
+          p-1 cursor-default hover:scale-x-100 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Toyota</h1>
         </div>
 
@@ -296,7 +297,7 @@ const onShowMoreClick = async () => {
           
 <div className='grid grid-cols-2 sm:flex flex-wrap w-full gap-2 justify-center'>
   {recentListings && recentListings.map((listing, index) => (
-    <div key={index} data-aos='zoom-in' className='col-span-1 h-[210px] md:w-[240px] md:h-[250px] m-1 ml-2 mr-2  bg-slate-100 rounded-sm shadow-black shadow-md  overflow-hidden'>
+    <div key={index} data-aos='zoom-in' className='col-span-1 h-[210px] md:w-[240px] md:h-[250px] m-1 ml-2 sm:ml-0 mr-2 sm:mr-0  bg-slate-100 rounded-sm shadow-black shadow-md  overflow-hidden'>
       <img 
         onClick={() => handlegetListing(listing._id)} 
         className='h-[120px] w-full object-cover hover:scale-105 transition-scale duration-300 md:h-[160px] md:w-[240px]' 
@@ -312,7 +313,11 @@ const onShowMoreClick = async () => {
           <span className='font-bold text-green-800 my-auto mr-1'><FaMapMarkerAlt /></span> 
           {listing.location}
         </p>
-        <p className='text-[12px] ml-2'><span className='font-bold'>Price:</span> {listing.price}</p>
+        <p className='text-[12px] ml-2'><span className='font-bold'>Price:</span> <span className='text-red-600 font-bold'>{listing.price}</span> </p>
+              <p
+                  onClick={() => handleAddToWishlist(listing)}
+                  className='absolute right-0 top-1/2 transform -translate-y-1/2 p-3 text-[18px] sm:text-[25px] text-gray-500 hover:text-red-700'><FaHeart />
+                  </p>
       </div>
     </div>
   ))}

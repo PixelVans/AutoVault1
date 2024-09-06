@@ -307,14 +307,14 @@ export default function ProfilePage() {
         type='buttob'
         onClick={handleSignoutUser}
         className='bg-red-400 w-[300px] 
-   sm:w-[330px] text-center mx-auto mt-3 p-1
+   sm:w-[330px] text-center mx-auto mt-3 p-2
     rounded-md hover:opacity-90'>Signout</button>
       
       <button
         type='button'
         onClick={handleDeleteUser}
         className='bg-red-900 w-[300px] 
-   sm:w-[330px] text-center mx-auto mt-3 p-1
+   sm:w-[330px] text-center mx-auto mt-3 p-2
     rounded-md text-white hover:opacity-90'>Delete Account</button>
 
 </div>

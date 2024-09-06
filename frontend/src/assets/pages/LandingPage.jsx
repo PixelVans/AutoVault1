@@ -14,7 +14,7 @@ export default function LandingPage() {
           <div className='absolute top-0 text-white mt-1 w-full'>
     <div className='flex text-center  items-center'>
                       <img className='w-[30px] sm:w-[50px] ml-2 animate-rot' src="/images/spedom.png" alt="" /> 
-                      <div className='mx-auto flex gap-6'>
+                      <div className='mx-auto flex gap-9 '>
                           <Link to={'/home'}> <h1 className='hover:text-orange-300  text-slate-400'>Home</h1> </Link>
                           <Link to={'/about'}><h1 className='hover:text-orange-300 text-slate-400' >About</h1>  </Link>
                           <Link to={'/login'}>  <h1 className='hover:text-orange-300 text-slate-400'>Login</h1>   </Link>

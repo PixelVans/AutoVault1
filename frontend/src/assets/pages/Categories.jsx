@@ -75,7 +75,8 @@ export default function Categories() {
    
         
         {/* Card */}
-        <div
+          <div
+            data-aos='zoom-in'
           onClick={()=>handleSportsCars('true')}
           className='hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out  cursor-pointer'>
         <div className='border border-gray-700 text-center p-2 mt-5 border-t-0 bg-supercar h-[35px] shadow-lg'></div>
@@ -88,7 +89,8 @@ export default function Categories() {
         
         
         {/* Card */}
-        <div
+          <div
+            data-aos='zoom-in'
            onClick={()=>handleSortCars('bus')}
           className='hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out cursor-pointer'>
         <div className='border border-gray-700 text-center p-2 mt-5 border-t-0 bg-bus h-[35px]'></div>
@@ -101,7 +103,8 @@ export default function Categories() {
         
         
         {/* Card */}
-        <div
+          <div
+            data-aos='zoom-in'
            onClick={()=>handleSortCars('truck')}
           className='hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out cursor-pointer'>
         <div className='border border-gray-700 text-center p-2 mt-5 border-t-0 bg-truck h-[35px]'></div>
@@ -114,7 +117,8 @@ export default function Categories() {
         
         
         {/* Card */}
-        <div
+          <div
+            data-aos='zoom-in'
            onClick={()=>handleSortCars('suv')}
           className='hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out cursor-pointer'>
         <div className='border border-gray-700 text-center p-2 mt-5 border-t-0 bg-suv h-[35px]'></div>
@@ -127,7 +131,8 @@ export default function Categories() {
         
         
         {/* Card */}
-        <div
+          <div
+            data-aos='zoom-in'
            onClick={()=>handleFuelType('electric')}
           className='hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out cursor-pointer'>
         <div className='border border-gray-700 text-center p-2 mt-5 border-t-0 bg-ell h-[35px]'></div>
@@ -140,7 +145,8 @@ export default function Categories() {
           <h1 className='text-gray-400  text-center  font-bold text-[18px]'>Popular Brands</h1>
         </div>
 
-        <div
+          <div
+            data-aos='zoom-in'
           onClick={()=>handleCarBrand('toyota')}
           className='border border-gray-700 border-t-0 text-center 
           p-1 cursor-default hover:scale-x-110 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
@@ -156,7 +162,8 @@ export default function Categories() {
         </div>
 
 
-        <div
+          <div
+            data-aos='zoom-in'
           onClick={()=>handleCarBrand('nissan')}
           className='border border-gray-700 border-t-0 text-center 
            p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
@@ -170,35 +177,40 @@ export default function Categories() {
           <h1 className='text-white text-center  text-[16px] mb-1'>Audi</h1>
         </div>
       
-        <div
+          <div
+            data-aos='zoom-in'
           onClick={()=>handleCarBrand('bmw')}
           className='border border-gray-700 border-t-0 text-center 
            p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>BMW</h1>
         </div>
         
-        <div
+          <div
+            data-aos='zoom-in'
         onClick={()=>handleCarBrand('land rover')}
           className='border border-gray-700 border-t-0 text-center 
            p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Land Rover</h1>
         </div>
         
-        <div
+          <div
+            data-aos='zoom-in'
           onClick={()=>handleCarBrand('ford')}
           className='border border-gray-700 border-t-0 text-center 
            p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Ford</h1>
         </div>
         
-        <div
+          <div
+            data-aos='zoom-in'
         onClick={()=>handleCarBrand('volks wagen')}
           className='border border-gray-700 border-t-0 text-center
             p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
           <h1 className='text-white text-center  text-[16px] mb-1'>Volks Wagen</h1>
         </div>
 
-        <div
+          <div
+            data-aos='zoom-in'
           onClick={()=>handleCarBrand('subaru')}
           className='border border-gray-700 border-t-0 text-center 
            p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
@@ -206,7 +218,8 @@ export default function Categories() {
         </div>
         
         
-        <div
+          <div
+            data-aos='zoom-in'
         onClick={()=>handleCarBrand('mazda')}
           className='border border-gray-700 border-t-0 text-center 
            p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>

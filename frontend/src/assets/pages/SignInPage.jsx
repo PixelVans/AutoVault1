@@ -49,7 +49,7 @@ const handleChange = (e) => {
   }
      setLoading(false)
      dispatch(loggedIn(data))
-   navigate('/')
+   navigate('/home')
      
    }  catch (error) {
      setLoading(false)
