@@ -154,7 +154,8 @@ export default function Categories() {
         </div>
 
 
-        <div
+          <div
+            data-aos='zoom-in'
         onClick={()=>handleCarBrand('mercedez')}
           className='border border-gray-700 border-t-0 text-center mt-2  
            p-1 cursor-default hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
@@ -170,7 +171,8 @@ export default function Categories() {
           <h1 className='text-white text-center  text-[16px] mb-1'>Nissan</h1>
         </div>
         
-        <div
+          <div
+            data-aos='zoom-in'
          onClick={()=>handleCarBrand('audi')}
           className='border border-gray-700 border-t-0 text-center 
            p-1 cursor-default  mt-2 hover:scale-x-105 hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out'>
