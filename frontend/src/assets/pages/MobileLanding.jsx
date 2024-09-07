@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import CountUp from 'react-countup';
 
 export default function MobileLanding() {
   return (
@@ -40,15 +41,28 @@ export default function MobileLanding() {
             <img data-aos="fade-up" data-aos-delay="1200" data-aos-once="true" className='w-[25px] sm:w-[60px] h-[40px] sm:h-[45px] object-contain' src="/carlogos/7.png" alt="" />
           </div>
           
+      
+      
 
         {/* welcome text */}
           <div className='flex flex-col mx-5 justify-center text-center'>
               <h1 data-aos='fade-up '
                   data-aos-delay='700'
-                  className='text-[24px]  text-slate-100  mt-[20px] '>
+                  className='text-[25px]  text-slate-100  mt-[20px] '>
                   Welcome <span data-aos='zoom-in ' data-aos-delay='1300'> to </span >
                   <span data-aos='zoom-in ' data-aos-delay='1600'>AutoVault</span></h1> <br />
-                  
+                     
+        
+                           {/* countdown */}
+      <div className='flex mt-[10px]  gap-[10px] flex-wrap justify-center'>
+      <p className='text-l xl:text-xl font-light text-orange-100'>With over</p> <CountUp
+                                  end={1000}
+                                  duration={3}
+                                  delay={2}
+                              className='text-l xl:text-xl font-light  text-orange-100'/> <p className='text-l xl:text-xl font-light text-orange-50'>Listings</p>
+      </div>
+
+         
               <p className='font-extralight text-slate-300  text-[13px] '>
                       At AutoVault, our mission is to simplify the process of buying and
                       selling vehicles. <br/> Whether you're searching for your next dream car
@@ -63,7 +77,9 @@ export default function MobileLanding() {
                       </Link>
                   </button>
          </div>
-
+             
+      
+      
 
     </div>
   )

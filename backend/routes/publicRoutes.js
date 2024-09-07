@@ -8,4 +8,5 @@ router.get('/listings', publicListings)
 router.get('/home/listings', homeListings)
 
 
+
 export default router

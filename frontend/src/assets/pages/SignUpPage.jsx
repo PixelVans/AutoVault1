@@ -1,5 +1,6 @@
 import {  React,useState } from 'react'
 import {Link,useNavigate} from 'react-router-dom'
+import GoogleSignUp from '../../components/GoogleSignUp';
 
 
 
@@ -93,7 +94,8 @@ export default function SignUpPage() {
         <button
             className="bg-green-800 w-[300px] sm:w-[330px]
      text-white p-2 mt-6 text-center rounded-lg hover:opacity-90"
-        >  { loading ? 'loading..': 'Sign Up'}</button>
+        >  {loading ? 'loading..' : 'Sign Up'}</button>
+         <GoogleSignUp/>
     
  
     

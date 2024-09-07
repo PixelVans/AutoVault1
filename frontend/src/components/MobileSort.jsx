@@ -48,7 +48,7 @@ export default function MobileSort({ toggleMenu, isMenuOpen }) {
         
         
       <Link to={'/settings'}>
-            <div data-aos='zoom-in ' data-aos-delay='100'
+            <div   onClick={toggleMenu} data-aos='zoom-in ' data-aos-delay='100'
                   className=' mt-3  h-[30px] sm:h-[43px] w-full sm:w-[125px] text-[14px]  border
                   border-gray-700 sm:border-gray-450 border-x-0 
                   items-center justify-center text-white  hover:bg-slate-950  rounded-sm'>
@@ -58,7 +58,7 @@ export default function MobileSort({ toggleMenu, isMenuOpen }) {
 
 
       <Link to={'/notifications'}>
-            <div data-aos='zoom-in ' data-aos-delay='300'
+            <div   onClick={toggleMenu} data-aos='zoom-in ' data-aos-delay='300'
                   className='   h-[30px] sm:h-[43px] w-full sm:w-[125px] text-[14px]  border
                   border-gray-700 sm:border-gray-450 border-x-0 mt-3
                   items-center justify-center text-white  hover:bg-slate-950  rounded-sm'>
@@ -69,7 +69,7 @@ export default function MobileSort({ toggleMenu, isMenuOpen }) {
 
           
       <Link to={'/news'}>
-            <div data-aos='zoom-in ' data-aos-delay='500'
+            <div   onClick={toggleMenu} data-aos='zoom-in ' data-aos-delay='500'
                   className='   h-[30px] sm:h-[43px] w-full sm:w-[125px] text-[14px]  border
                   border-gray-700 sm:border-gray-450 border-x-0 mt-3
                   items-center justify-center text-white  hover:bg-slate-950  rounded-sm'>
@@ -79,7 +79,7 @@ export default function MobileSort({ toggleMenu, isMenuOpen }) {
 
 
       <Link to={'/faq'}>
-            <div data-aos='zoom-in ' data-aos-delay='700'
+            <div   onClick={toggleMenu} data-aos='zoom-in ' data-aos-delay='700'
                   className='   h-[30px] sm:h-[43px] w-full sm:w-[125px] text-[14px]  border
                   border-gray-700 sm:border-gray-450 border-x-0 mt-3
                   items-center justify-center text-white  hover:bg-slate-950  rounded-sm'>
@@ -90,11 +90,20 @@ export default function MobileSort({ toggleMenu, isMenuOpen }) {
 
 
       <Link to={'/help'}>
-            <div  data-aos='zoom-in ' data-aos-delay='900'
+            <div   onClick={toggleMenu} data-aos='zoom-in ' data-aos-delay='900'
                   className='   h-[30px] sm:h-[43px] w-full sm:w-[125px] text-[14px]  border
                   border-gray-700 sm:border-gray-450 border-x-0 mt-3
                   items-center justify-center text-white  hover:bg-slate-950  rounded-sm'>
               <h1 className='ml-3 '>Support</h1>
+          </div>
+          </Link>
+
+      <Link to={'/about'}>
+            <div   onClick={toggleMenu} data-aos='zoom-in ' data-aos-delay='900'
+                  className='   h-[30px] sm:h-[43px] w-full sm:w-[125px] text-[14px]  border
+                  border-gray-700 sm:border-gray-450 border-x-0 mt-3
+                  items-center justify-center text-white  hover:bg-slate-950  rounded-sm'>
+              <h1 className='ml-3 '>About</h1>
           </div>
           </Link>
 

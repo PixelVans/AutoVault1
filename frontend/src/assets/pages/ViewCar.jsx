@@ -6,17 +6,20 @@ import {Navigation} from 'swiper/modules'
 import 'swiper/css/bundle';
 import { Link } from 'react-router-dom';
 import Contact from '../../components/Owner';
-
+import { useEffect } from 'react';
 
 
 
 export default function ViewCar() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     const listing = useSelector(state => state.user.listing)
     const currentUser = useSelector(state => state.user.userData)
     const [contact, setContact] = useState(false);
 
   return (
-      <main className='max-w-[1200px] mx-auto p-2 shadow-md shadow-gray-900 mt-4'>
+      <main className='max-w-[1200px] mx-auto p-2 h-full shadow-md shadow-gray-900 mt-4'>
           <div className='grid grid-cols-1 md:grid-cols-2'>
               <div className=' mt-5'>
                   <Swiper>
