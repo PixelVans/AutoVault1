@@ -5,9 +5,9 @@ export default function AboutPage() {
   return (
     <Container 
       sx={{ 
-        minHeight: '70vh', 
+        minHeight: '100vh', 
         display: 'flex', 
-        justifyContent: 'center', 
+        flexDirection: 'column', 
         alignItems: 'center', 
         p: 3 
       }}
@@ -17,7 +17,8 @@ export default function AboutPage() {
           p: 4, 
           maxWidth: '800px', 
           boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.2)', 
-          backgroundColor: '#fff'
+          backgroundColor: '#fff',
+          mb: 4
         }}
       >
         <Typography 
@@ -82,6 +83,33 @@ export default function AboutPage() {
           Thank you for choosing AutoVault. We look forward to serving you!
         </Typography>
       </Paper>
+
+      <Box 
+        sx={{ 
+          width: '100%', 
+          maxWidth: '800px' 
+        }}
+      >
+        <Typography 
+          variant="h6" 
+          sx={{ 
+            mb: 2, 
+            textAlign: 'center', 
+            color: '#334155' 
+          }}
+        >
+          Come and Explore"
+        </Typography>
+
+        <video 
+          width="100%" 
+          height="auto" 
+          controls 
+          src="/videos/vid1.mp4" // Path relative to the public directory
+        >
+          Your browser does not support the video tag.
+        </video>
+      </Box>
     </Container>
   );
 }
