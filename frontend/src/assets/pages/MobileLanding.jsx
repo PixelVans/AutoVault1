@@ -4,7 +4,7 @@ import CountUp from 'react-countup';
 
 export default function MobileLanding() {
   return (
-      <div className='sm:hidden bg-slate-800 h-screen'>
+      <div className='sm:hidden bg-slate-800 min-h-screen h-full '>
           
           {/* navbar */}
           <nav className=' flex gap-9 justify-between mx-5'>
