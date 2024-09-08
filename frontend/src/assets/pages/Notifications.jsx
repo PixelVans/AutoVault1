@@ -63,13 +63,15 @@ export default function Notifications() {
           gutterBottom 
           sx={{ 
             mb: 4, 
-            fontSize: { xs: '1.5rem', sm: '2rem' }, 
+            fontSize: { xs: '15px', sm: '2rem' }, 
             fontWeight: 'bold',
             textAlign: 'center'
           }}
         >
-          <Badge color="primary" badgeContent={notifications.length}>
-            <NotificationsIcon fontSize="large"  />
+          <Badge
+             
+            color="primary" badgeContent={notifications.length} >
+            <NotificationsIcon sx={{fontSize: { xs: '18px', sm: '2rem' },}} />
           </Badge>
           Notifications
         </Typography>
@@ -91,9 +93,19 @@ export default function Notifications() {
                     <NotificationsIcon color="primary" />
                   </ListItemIcon>
                   <ListItemText
-                    primary={notification.message}
-                    secondary={notification.time}
-                  />
+  primaryTypographyProps={{
+    sx: {
+      display: '-webkit-box',
+      WebkitBoxOrient: 'vertical',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      WebkitLineClamp: { xs: 1, sm: 'initial' },  // 2 lines for mobile, no limit for larger screens
+    },
+  }}
+  primary={notification.message}
+  secondary={notification.time}
+/>
+
                   <ExpandMoreIcon />
                 </ListItem>
 
