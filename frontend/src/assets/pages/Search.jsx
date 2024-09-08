@@ -8,12 +8,15 @@ import { FaHeart } from 'react-icons/fa';
 
 
 export default function Search() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
     const [searchListings, setSearchListings] = useState([]);
     const [listings, setListings] = useState([]);
     const [showMore, setShowMore] = useState(false);
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const [loadingCat, setLoading] = useState(false)
+  const [loadingCars, setLoading] = useState(false)
   
     
     
@@ -291,10 +294,16 @@ export default function Search() {
        
         <div className='flex flex-wrap  w-full justify-center'>
            
-                  {searchListings.length > 0 ? (<h1 className='text-center text-[22px] mx-auto w-full bg-slate-300 font-light mb-1'>Results</h1>) : (
-                  (<h1 className='text-center text-[22px] mx-auto w-full '>Waiting For Results..</h1>)     
-                  )}
-                  {loadingCat && <p className='text-center text-[22px] mx-auto w-full'>Loading..</p>}
+        {loadingCars ? (
+  <h1 className='text-center text-[19px] mx-auto w-full '>Waiting For Results..</h1>
+) : searchListings.length > 0 ? (
+  <h1 className='text-center text-[17px] mx-auto w-full bg-slate-300 font-light mb-1'>Results</h1>
+) : (
+  <h1 className='text-center text-[19px] mx-auto w-full text-red-500'>No results Found</h1>
+)}
+
+        
+                  {loadingCars && <p className='text-center text-[22px] mx-auto w-full'>Loading..</p>}
        
         
           {searchListings && searchListings.map((listing, index) => (

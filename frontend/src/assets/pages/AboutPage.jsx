@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Typography, Paper, Container } from '@mui/material';
 
 export default function AboutPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Container 
       sx={{ 
@@ -34,15 +38,7 @@ export default function AboutPage() {
           About AutoVault
         </Typography>
         
-        <Typography 
-          variant="h6" 
-          sx={{ 
-            mb: 2, 
-            color: '#334155' 
-          }}
-        >
-          Welcome to AutoVault!
-        </Typography>
+        
 
         <Typography 
           variant="body1" 
@@ -98,7 +94,7 @@ export default function AboutPage() {
             color: '#334155' 
           }}
         >
-          Come and Explore"
+         Welcome Onboard!
         </Typography>
 
         <video 

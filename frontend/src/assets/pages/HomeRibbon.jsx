@@ -7,9 +7,14 @@ import { FaCog } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { MyListingsComponent, } from '../../components/ribbonRoutes';
+import { useSelector } from 'react-redux';
 
 export default function HomeRibbon() {
-    const navigate = useNavigate()
+
+    const notificationsCount = useSelector((state) => state.user.notifications);
+    const hasNotifications = notificationsCount > 0;
+    
+   
   return (
       <div className='md:bg-gray-800 h-[45px] sm:h-[100px] md:h-[43px] md:mt-1 flex w-full'>
           <div className='flex md:mx-auto flex-wrap mt-[2px] sm:mt-0 justify-center'>
@@ -49,7 +54,9 @@ export default function HomeRibbon() {
                   className='hidden  md:flex bg-slate-800 md:bg-none h-[30px] sm:h-[43px] w-[90px] sm:w-[125px] text-[10px] sm:text-[15px] border
                    border-gray-600 sm:border-gray-450   gap-1
                     items-center justify-center text-white hover:bg-slate-950 transition duration-300 rounded-sm'>
-              <h1 className='text-sm'>Notifications</h1>
+              <h1 className='text-sm'>Notifications <span className=''>  {hasNotifications && (
+            <span className='ml-1 text-green-400 w-3 h-3'>●</span> // Optional: Add a visual indicator
+          )} </span></h1>
               </div>
               </Link>
 

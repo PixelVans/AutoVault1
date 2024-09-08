@@ -1,11 +1,12 @@
 import React from 'react'
-import { useNavigate,Link } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 
 export default function MobileSort({ toggleMenu, isMenuOpen }) {
-    const navigate = useNavigate();
-
+   
+  const notificationsCount = useSelector((state) => state.user.notifications);
+    const hasNotifications = notificationsCount > 0;
 
 
 
@@ -62,7 +63,9 @@ export default function MobileSort({ toggleMenu, isMenuOpen }) {
                   className='   h-[30px] sm:h-[43px] w-full sm:w-[125px] text-[14px]  border
                   border-gray-700 sm:border-gray-450 border-x-0 mt-3
                   items-center justify-center text-white  hover:bg-slate-950  rounded-sm'>
-              <h1 className='ml-3 '>Notifications</h1>
+              <h1 className='ml-3 flex'>Notifications <span className='text-center my-auto'>  {hasNotifications && (
+            <div className='ml-4  w-[9px] h-[9px] mt-[3px] bg-green-400 rounded-full'></div> // Optional: Add a visual indicator
+          )} </span> </h1>
           </div>
           </Link>
 

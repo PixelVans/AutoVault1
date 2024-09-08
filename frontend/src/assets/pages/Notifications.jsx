@@ -3,8 +3,14 @@ import { Box, Typography, List, ListItem, ListItemText, ListItemIcon, IconButton
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { updateNotifications } from '../../../redux/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 export default function Notifications() {
+  const dispatch = useDispatch();
+ 
+
   // Placeholder notifications
   const [notifications, setNotifications] = useState([
     { id: 1, message: 'This is how your notifications will appear.', time: 'Just now', details: 'Detailed explanation about this notification.' },
@@ -12,7 +18,7 @@ export default function Notifications() {
     { id: 3, message: 'You will receive alerts for important updates.', time: '1 hour ago', details: 'Important updates will be highlighted here.' },
     { id: 4, message: 'Check here for any new messages from support.', time: '1 day ago', details: 'Support messages will be sent here.' },
   ]);
-
+  dispatch(updateNotifications(notifications.length));
   // State to manage which notification is expanded
   const [expanded, setExpanded] = useState(null);
 
@@ -23,7 +29,12 @@ export default function Notifications() {
 
   // Function to remove a notification
   const handleDelete = (id) => {
-    setNotifications(notifications.filter(notification => notification.id !== id));
+    // Remove the notification from the local state
+    const updatedNotifications = notifications.filter(notification => notification.id !== id);
+    setNotifications(updatedNotifications);
+
+    // Dispatch the action to update the notification count in Redux
+    dispatch(updateNotifications(updatedNotifications.length));
   };
 
   return (

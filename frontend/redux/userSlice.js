@@ -7,6 +7,7 @@ const initialState = {
     myListings: null,
     listing: null,
     wishlist: [],
+    notifications: 0,
   
 }
   
@@ -50,6 +51,10 @@ export const userSlice = createSlice({
             // Filter out the item with the matching ID
             state.wishlist = state.wishlist.filter(item => item._id !== action.payload);
         },
+        updateNotifications: (state, action) => {
+            // Filter out the item with the matching ID
+            state.notifications = action.payload;
+        },
        
         
     }
@@ -62,6 +67,6 @@ export const userSlice = createSlice({
 
 
 
-export const {loggedIn ,loggedOut,sellcar,userListings,removeListing,viewListing,addToWishlist,removeFromWishlist,homestorage } = userSlice.actions
+export const {loggedIn ,loggedOut,sellcar,userListings,removeListing,viewListing,addToWishlist,removeFromWishlist,homestorage,updateNotifications } = userSlice.actions
 
 export default userSlice.reducer

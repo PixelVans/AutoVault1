@@ -7,24 +7,19 @@ import {
     FaMobileAlt, 
  } from 'react-icons/fa'
  import { AiOutlineMail } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
  const FooterLinks = [
     {
         title: 'Home',
-        link: '/home'
+        links: '/home'
       },
     {
         title: 'About',
-        link: '/about'
+        links: '/about'
       },
-    {
-        title: 'Contact',
-        link: '#/contact'
-      },
-    {
-        title: 'Blog',
-        link: '#/blog'
-      },
+    
+    
    
   ]
 
@@ -46,14 +41,14 @@ export default function Footer() {
     
     <div 
       className='text-black  mb-2 bg-slate-100 mt-[100px]  shadow-top'>
-          <div className='container'>  
+          <div className=''>  
               {/* company details */}
               <div
                   data-aos='zoom-in'
                   className='grid md:grid-cols-3 pb-[35px] pt-5'>
                   
              
-              <div className='py-8 px-4'>
+              <div className='py-2 sm:py-8 px-4'>
                       <h1 className='sm:text-2xl text-xl font-bold sm:text-left 
                       text-justify mb-3 flex items-center gap-3'>
                          
@@ -67,7 +62,7 @@ export default function Footer() {
                   {/* footer links */}
                   <div className='grid grid-cols-2 sm:grid-cols-3 col-span-2 md:pl-10'>
                       <div>
-                          <div className='py-8 px-4'>
+                          <div className='py-2 sm:py-8 px-4'>
                               <h1 className='sm:text-xl text-xl font-bold sm:text-left 
                               text-justify mb-3 '>
                                   Important Links
@@ -76,8 +71,9 @@ export default function Footer() {
                                   {FooterLinks.map((link) => (
                                       <li className='cursor-pointer hover:text-primary 
                                       hover:translate-x-1 duration-300 text-gray-900'
-                                      key={link.title}>
-                                          <span>{ link.title}</span>
+                                          key={link.title}>
+                                          <Link to={link.links}><span>{ link.title}</span></Link>
+                                          
                                       </li>
                                   ))}
                               </ul>
@@ -86,15 +82,15 @@ export default function Footer() {
 
                 {/* social links */}
                       <div className='mt-3'>
-                          <di v className='flex items-center gap-3 mt-6'>
+                          <di v className='flex items-center gap-3 mt-2 sm:mt-6'>
                               <a href="#">
-                                  <FaInstagram className='text-3xl '/>
+                                  <FaInstagram className='text-2xl sm:text-3xl'/>
                               </a>
                               <a href="#">
-                                  <FaFacebook className='text-3xl '/>
+                                  <FaFacebook className='text-2xl sm:text-3xl'/>
                               </a>
                               <a href="#">
-                                  <FaLinkedin className='text-3xl'/>
+                                  <FaLinkedin className='text-2xl sm:text-3xl'/>
                               </a>
                               
                           </di>

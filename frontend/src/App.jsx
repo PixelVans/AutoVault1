@@ -29,9 +29,13 @@ import ViewCar from './assets/pages/ViewCar';
 import Search from './assets/pages/Search';
 import LandingPage from './assets/pages/LandingPage';
 import Footer from './components/Footer';
+import { updateNotifications } from '../redux/userSlice';
+import { useDispatch, } from 'react-redux';
 
 export default function App() {
- 
+  const dispatch = useDispatch();
+  let originalLength = 4;
+  dispatch(updateNotifications(originalLength));
   React.useEffect(() => {
     AOS.init({
       offset: 100,
