@@ -79,7 +79,7 @@ export default function Header() {
 
                 <Link to='/home'>
                     <div className='flex text-slate-200'>
-                        <h1 className='font-bold text-[17px] sm:text-[22px] text-center'>AutoVault  </h1>
+                        <h1 className='font-bold text-[17px] sm:text-[22px] text-center hover:text-orange-300'>AutoVault  </h1>
                         <img className='bg-wheel h-[23px] w-[23px] sm:h-[33px] sm:w-[33px] mx-2 my-auto animate-rotate' src='../../images/wheel.png' alt='Rotating wheel'/>
                    </div>
                 </Link>
@@ -98,10 +98,10 @@ export default function Header() {
                 </form>
                 <div className='flex gap-2 sm:gap-6 items-center text-white font-extralight'>
                     <Link to='/'>
-                        <h1 className='hidden sm:inline-block'>Home</h1>
+                        <h1 className='hidden sm:inline-block hover:text-orange-300 hover:font-bold'>Home</h1>
                     </Link>
                     <Link to='about'>
-                        <h1 className='hidden sm:inline-block'>About</h1>
+                        <h1 className='hidden sm:inline-block hover:text-orange-300 hover:font-bold'>About</h1>
                     </Link>
                     {isAuthenticated ? (
                         <Link to='profile'>
@@ -109,7 +109,7 @@ export default function Header() {
                         </Link>
                     ) : (
                         <Link to='sign-in'>
-                            <h1 className=''>Sign In</h1>
+                            <h1 className='hover:font-bold hover:text-orange-300'>Sign In</h1>
                         </Link>
                     )}
                 </div>

@@ -47,7 +47,7 @@ export const MyListingsComponent = () => {
                    border-gray-600 sm:border-gray-450   gap-1
                    flex items-center justify-center text-white hover:bg-slate-900 transition duration-300 rounded-sm cursor-pointer'>
                
-          {loading? (<h1>loading...</h1>) : (<h1>My Listings</h1>)}
+          {loading? (<h1>loading...</h1>) : (<h1 className='hover:text-orange-100'>My Listings</h1>)}
           
           
               </div>
