@@ -1,16 +1,24 @@
 import { React, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { viewListing } from '../../../redux/userSlice';
-import { useDispatch } from 'react-redux';
-import { addToWishlist} from '../../../redux/userSlice';
+
+
+import { useDispatch ,useSelector} from 'react-redux';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa';
-
+import { addToWishlist, viewListing ,removeFromWishlist} from '../../../redux/userSlice';
 
 export default function Search() {
+
+
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+
+  const wishlist = useSelector((state) => state.user.wishlist);
+  const isAuthenticated = useSelector((state) => state.user.isAuthenticated); 
+
     const [searchListings, setSearchListings] = useState([]);
     const [listings, setListings] = useState([]);
     const [showMore, setShowMore] = useState(false);
@@ -126,11 +134,24 @@ export default function Search() {
   
 
 
-  const handleAddToWishlist = (listing) => {
-    dispatch(addToWishlist(listing));
+  const isListingInWishlist = (listingId) => {
+    return wishlist.some((item) => item._id === listingId);
+  };
+
+
+  const handleToggleWishlist = (listing) => {
+    if (!isAuthenticated) {
+      alert('You need to sign-in to manage your wishlist.');
+      return;
+    }
+
+    if (isListingInWishlist(listing._id)) {
+      dispatch(removeFromWishlist(listing._id)); // Dispatch action to remove from wishlist
+    } else {
+      dispatch(addToWishlist(listing)); // Dispatch action to add to wishlist
+    }
   };
   
-   
 
 
 
@@ -320,9 +341,11 @@ export default function Search() {
           <p className='text-[12px] ml-2 hidden sm:block'><span className='font-bold'>Location:</span> { listing.location}</p>
           <p className='text-[12px] ml-2 flex sm:hidden'><span className='font-bold text-green-800 my-auto mr-1'> <FaMapMarkerAlt/> </span> { listing.location}</p>
           <p className='text-[12px] ml-2'><span className='font-bold'>Price:</span> <span className='text-red-600 font-bold'>${ listing.price}</span> </p>
-            <p
-              onClick={() => handleAddToWishlist(listing)}
-              className='absolute right-0 top-1/2 transform -translate-y-1/2 p-3 text-[18px] sm:text-[25px] text-gray-500 hover:text-red-700'><FaHeart />
+          <p
+                onClick={() => handleToggleWishlist(listing)}
+                className={`absolute right-0 top-1/2 transform -translate-y-1/2 p-3 text-[18px] sm:text-[25px] ${isListingInWishlist(listing._id) ? 'text-red-700' : 'text-gray-500'} hover:text-red-700`}
+              >
+                <FaHeart />
               </p>
           </div>
         </div>

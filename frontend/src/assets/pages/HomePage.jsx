@@ -1,18 +1,21 @@
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore from 'swiper'
-import {Navigation} from 'swiper/modules'
+
+
 import 'swiper/css/bundle';
 import { useEffect, useState } from 'react';
 import { useNavigate} from 'react-router-dom'
 import { useDispatch ,useSelector} from 'react-redux';
-import { addToWishlist, viewListing } from '../../../redux/userSlice';
+import { addToWishlist, viewListing ,removeFromWishlist} from '../../../redux/userSlice';
 import { FaHeart } from 'react-icons/fa';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
 
 
+
 export default function HomePage() {
+const wishlist = useSelector((state) => state.user.wishlist);
+  const isAuthenticated = useSelector((state) => state.user.isAuthenticated); 
+  
  const [recentListings, setRecentListings] = useState([])
   const [loading, setLoading] = useState(false)
   const [showMore, setShowMore] = useState(false);
@@ -69,14 +72,25 @@ const onShowMoreClick = async () => {
 
 
   
+ const isListingInWishlist = (listingId) => {
+    return wishlist.some((item) => item._id === listingId);
+  };
 
 
+  const handleToggleWishlist = (listing) => {
+    if (!isAuthenticated) {
+      alert('You need to sign-in to manage your wishlist.');
+      return;
+    }
 
-  const handleAddToWishlist = (listing) => {
-    dispatch(addToWishlist(listing));
+    if (isListingInWishlist(listing._id)) {
+      dispatch(removeFromWishlist(listing._id)); // Dispatch action to remove from wishlist
+    } else {
+      dispatch(addToWishlist(listing)); // Dispatch action to add to wishlist
+    }
   };
   
-  
+ 
   
   
   
@@ -314,10 +328,12 @@ const onShowMoreClick = async () => {
           {listing.location}
         </p>
         <p className='text-[12px] ml-2'><span className='font-bold'>Price:</span> <span className='text-red-600 font-bold'>{listing.price}</span> </p>
-              <p
-                  onClick={() => handleAddToWishlist(listing)}
-                  className='absolute right-0 top-1/2 transform -translate-y-1/2 p-3 text-[18px] sm:text-[25px] text-gray-500 hover:text-red-700'><FaHeart />
-                  </p>
+        <p
+                onClick={() => handleToggleWishlist(listing)}
+                className={`absolute right-0 top-1/2 transform -translate-y-1/2 p-3 text-[18px] sm:text-[25px] ${isListingInWishlist(listing._id) ? 'text-red-700' : 'text-gray-500'} hover:text-red-700`}
+              >
+                <FaHeart />
+              </p>
       </div>
     </div>
   ))}

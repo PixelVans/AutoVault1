@@ -28,34 +28,45 @@ export default function MyListings() {
 
 
   const handleDeletelisting = async (listingId) => {
-    try {
-    setdeleteMessage(false)
-      const res = await fetch( `/auth/user/delete-listing/${listingId}`, {
-        method: 'DELETE'
-      });
-      const data = await res.json();
-      
-      if (data.success === false) {
-        setdeleteMessage(data.message)
-    return
+    // Show a confirmation dialog
+    const isConfirmed = window.confirm("Are you sure you want to delete this listing?");
+    
+    // If confirmed, proceed with the deletion
+    if (isConfirmed) {
+      try {
+        setdeleteMessage(false);
+        const res = await fetch(`/auth/user/delete-listing/${listingId}`, {
+          method: 'DELETE'
+        });
+        const data = await res.json();
+        
+        if (data.success === false) {
+          setdeleteMessage(data.message);
+          return;
+        }
+  
+        setdeleteMessage(data);
+        dispatch(removeListing(listingId));
+        setUserListings((prev) =>
+          prev.filter((listing) => listing._id !== listingId)
+        );
+        
+        // Alert the user that the listing has been deleted
+        alert("The listing has been successfully deleted.");
+        
+      } catch (error) {
+        console.log(error);
+        setdeleteMessage(false);
       }
-      setdeleteMessage(data)
-      dispatch(removeListing(listingId));
-      setUserListings((prev) =>
-        prev.filter((listing) => listing._id !== listingId))
-       
-    } catch (error) {
-      console.log(error)
-      setdeleteMessage(false)
     }
-  }
-
+  };
+  
 
 
 
   // Handle cases where myListings might be undefined or empty
   if (!userListings || userListings.length === 0) {
-    return <p className='text-center h-screen'>No listings available.</p>;
+    return <p className='text-center h-screen'>Currently, your account has no listings.</p>;
   }
 
   return (
