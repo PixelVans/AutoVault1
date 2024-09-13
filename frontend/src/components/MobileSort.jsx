@@ -45,7 +45,7 @@ export default function MobileSort({ toggleMenu, isMenuOpen }) {
       {/* Add sidebar content here */}
      
        
-      <div className=' min-h-screen mt-1 max-w-[470px] flex md:hidden flex-col shadow-lg '>
+      <div className=' min-h-screen mt-1 max-w-[470px] flex lg:hidden flex-col shadow-lg '>
         
         
       <Link to={'/settings'}>

@@ -162,7 +162,7 @@ export default function Search() {
 
       
         
-              <div className='bg-gray-800 min-h-screen mt-1 max-w-[450px] hidden md:flex flex-col shadow-lg shadow-black'>
+              <div className='bg-gray-800 min-h-screen  w-[450px] hidden lg:flex flex-col shadow-lg shadow-black'>
         <div className='border border-gray-700 text-center p-2 bg-slate-900 mb-[20px]'>
           <h1 className='text-gray-400  text-center  font-bold text-[20px] mt-7 mb-[20px]'>Sort Type</h1>
         </div>
@@ -311,7 +311,7 @@ export default function Search() {
 
         </div>
         
-      <div className='max-w-[1300px] mx-auto'>
+      <div className=' mx-auto'>
        
         <div className='flex flex-wrap  w-full justify-center'>
            
@@ -326,32 +326,42 @@ export default function Search() {
         
                   {loadingCars && <p className='text-center text-[22px] mx-auto w-full'>Loading..</p>}
        
-        
+                  <div className='grid grid-cols-2 sm:flex flex-wrap w-full gap-2 justify-center'>
           {searchListings && searchListings.map((listing, index) => (
             
            
               
          
-          <div key={index} className=' w-[170px] h-[210px] md:w-[240px] md:h-[250px] m-1 bg-slate-100 rounded-sm shadow-black shadow-md ml-1 overflow-hidden'>
-             
-          <img onClick={() =>handlegetListing(listing._id)} className='h-[120px] w-[170px] md:h-[160px] md:w-[240px] object-cover hover:scale-105 transition-scale duration-300 ' src={listing.images[0]}></img>
-          <div className='relative'>
-          <p className='font-bold text-gray-950 ml-2 text-[12px] sm:text-[16px]'>{ listing.title}</p> <hr/>
-          <p className='text-[12px] ml-2 mt-1'><span className='font-bold'>Year:</span> { listing.year}</p>
-          <p className='text-[12px] ml-2 hidden sm:block'><span className='font-bold'>Location:</span> { listing.location}</p>
-          <p className='text-[12px] ml-2 flex sm:hidden'><span className='font-bold text-green-800 my-auto mr-1'> <FaMapMarkerAlt/> </span> { listing.location}</p>
-          <p className='text-[12px] ml-2'><span className='font-bold'>Price:</span> <span className='text-red-600 font-bold'>${ listing.price}</span> </p>
-          <p
-                onClick={() => handleToggleWishlist(listing)}
-                className={`absolute right-0 top-1/2 transform -translate-y-1/2 p-3 text-[18px] sm:text-[25px] ${isListingInWishlist(listing._id) ? 'text-red-700' : 'text-gray-500'} hover:text-red-700`}
-              >
-                <FaHeart />
-              </p>
-          </div>
-        </div>
+            <div key={index} data-aos='zoom-in' className='col-span-1 h-[210px] md:w-[240px] md:h-[250px] mt-1  mx-1 sm:mx-0 sm:ml-0  sm:mr-0 
+            bg-slate-100 rounded-sm shadow-slate-600 shadow-md  overflow-hidden'>
+             <img 
+               onClick={() => handlegetListing(listing._id)} 
+               className='h-[120px] w-full object-cover hover:scale-105 transition-scale duration-300 md:h-[160px] md:w-[240px]' 
+               src={listing.images[0]} 
+               alt={listing.title}
+             />
+             <div className='relative'>
+               <p className='font-bold text-gray-950 ml-2 text-[12px] sm:text-[16px]'>{listing.title}</p>
+               <hr />
+               <p className='text-[12px] ml-2 mt-1'><span className='font-bold'>Year:</span> {listing.year}</p>
+               <p className='text-[12px] ml-2 hidden sm:block'><span className='font-bold'>Location:</span> {listing.location}</p>
+               <p className='text-[12px] ml-2 flex sm:hidden'>
+                 <span className='font-bold text-green-800 my-auto mr-1'><FaMapMarkerAlt /></span> 
+                 {listing.location}
+               </p>
+               <p className='text-[12px] ml-2'><span className='font-bold'>Price:</span> <span className='text-red-600 font-bold'>{listing.price}</span> </p>
+               <p
+                 onClick={() => handleToggleWishlist(listing)}
+                 className={`absolute right-0 top-1/2 transform -translate-y-1/2 p-3 text-[18px] sm:text-[25px] ${isListingInWishlist(listing._id) ? 'text-red-700' : 'text-gray-500'} hover:text-red-700`}
+                 >
+                       <FaHeart />
+                     </p>
+             </div>
+           </div>
 
 
           ))}
+            </div>
        </div>
        {showMore && (
             <button

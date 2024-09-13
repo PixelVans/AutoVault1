@@ -63,9 +63,9 @@ export default function Header() {
                 
 
 
-<div className='relative mx-2 z-0 block sm:hidden'>
+<div className='relative mx-2 z-0 block lg:hidden'>
           {!isMenuOpen && (
-            <div onClick={toggleMenu} className='block sm:hidden cursor-pointer'>
+            <div onClick={toggleMenu} className='block lg:hidden cursor-pointer'>
               <div className='h-[2px] w-[23px] bg-slate-500 my-1'></div>
               <div className='h-[2px] w-[23px] bg-slate-500 my-1'></div>
               <div className='h-[2px] w-[23px] bg-slate-500 my-1'></div>
@@ -83,7 +83,7 @@ export default function Header() {
                         <img className='bg-wheel h-[23px] w-[23px] sm:h-[33px] sm:w-[33px] mx-2 my-auto animate-rotate' src='../../images/wheel.png' alt='Rotating wheel'/>
                    </div>
                 </Link>
-                <form onSubmit={handleSubmit} className=' bg-gray-700 rounded-lg hidden md:flex sm:w-[350px]'>
+                <form onSubmit={handleSubmit} className=' bg-gray-700 rounded-lg hidden lg:flex sm:w-[350px]'>
                     <input
                         className='p-[7px] sm:p-2 rounded-lg w-[140px] sm:w-[300px]
                         bg-gray-700 focus:outline-none m-auto ml-3 text-white'
@@ -116,7 +116,7 @@ export default function Header() {
             </div>
 
             <div>
-                <form onSubmit={handleSubmit} className='bg-gray-800 rounded-lg flex md:hidden 
+                <form onSubmit={handleSubmit} className='bg-gray-800 rounded-lg flex lg:hidden 
             focus-border-gray-100 mt-3 border border-slate-700'>
                     <input
                         className='p-[7px] sm:p-2 rounded-lg w-[140px] sm:w-[300px] 

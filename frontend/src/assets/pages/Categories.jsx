@@ -68,7 +68,7 @@ export default function Categories() {
      
               
        
-      <div className='bg-gray-800 min-h-screen mt-1 max-w-[470px] flex md:hidden flex-col shadow-lg'>
+      <div className='bg-gray-800 min-h-screen mt-1 max-w-[470px] flex lg:hidden flex-col shadow-lg mx-auto'>
         <div className='border border-gray-700 text-center p-2 bg-slate-900 mb-[20px]'>
           <h1 className='text-gray-400  text-center  font-bold text-[20px] mt-7 mb-[20px]'>Categories</h1>
         </div>
