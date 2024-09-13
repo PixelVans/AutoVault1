@@ -357,7 +357,7 @@ export default function Search() {
                <p className='text-[12px] ml-2'><span className='font-bold'>Price:</span> <span className='text-red-600 font-bold'>{listing.price}</span> </p>
                <p
                  onClick={() => handleToggleWishlist(listing)}
-                 className={`absolute right-0 top-1/2 transform -translate-y-1/2 p-3 text-[18px] sm:text-[25px] ${isListingInWishlist(listing._id) ? 'text-red-700' : 'text-gray-500'} hover:text-red-700`}
+                 className={`absolute right-0 top-1/2 transform -translate-y-1/2 p-3 text-[18px] sm:text-[25px] ${isListingInWishlist(listing._id) ? 'text-red-700' : 'text-gray-500'} lg:hover:text-red-700`}
                  >
                        <FaHeart />
                      </p>
