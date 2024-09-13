@@ -6,6 +6,9 @@ import { useSelector } from 'react-redux';
 import MobileSort from '../../components/MobileSort';
 
 export default function Header() {
+
+    const notificationsCount = useSelector((state) => state.user.notifications);
+    const hasNotifications = notificationsCount > 0;
     const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
     const userData = useSelector((state) => state.user.userData);
     const [searchTerm, setSearchTerm] = useState('');
@@ -83,6 +86,11 @@ export default function Header() {
                         <img className='bg-wheel h-[23px] w-[23px] sm:h-[33px] sm:w-[33px] mx-2 my-auto animate-rotate' src='../../images/wheel.png' alt='Rotating wheel'/>
                    </div>
                 </Link>
+                    
+                <span className='lg:hidden'>  {hasNotifications && (
+            <span className='ml-1 text-green-400 w-3 h-3'>●</span> // Optional: Add a visual indicator
+          )} </span>
+
                 <form onSubmit={handleSubmit} className=' bg-gray-700 rounded-lg hidden lg:flex sm:w-[350px]'>
                     <input
                         className='p-[7px] sm:p-2 rounded-lg w-[140px] sm:w-[300px]

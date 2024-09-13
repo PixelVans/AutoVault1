@@ -4,7 +4,7 @@ import React from 'react'
 import { FaCar } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa';
 import { FaCog } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+
 import { Link } from 'react-router-dom';
 import { MyListingsComponent, } from '../../components/ribbonRoutes';
 import { useSelector } from 'react-redux';

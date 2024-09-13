@@ -13,8 +13,8 @@ export default function Notifications() {
 
   // Placeholder notifications
   const [notifications, setNotifications] = useState([
-    { id: 1, message: 'This is how your notifications will appear.', time: 'Just now', details: 'Welcome to Autovault! We are thrilled to have you on board.' },
-    { id: 2, message: 'Notifications will update in real-time.', time: '1 minute ago', details: 'Real-time updates ensure you are always informed.' },
+    { id: 1, message: 'Welcome', time: 'Just now', details: 'Welcome to Autovault! We are thrilled to have you on board.' },
+    { id: 2, message: 'Notifications will update in real-time.', time: '1 minute ago', details: ' The green notification dot will always appear when you have unread notifications' },
     { id: 3, message: 'You will receive alerts for important updates.', time: '1 hour ago', details: 'Important updates will be highlighted here.' },
     { id: 4, message: 'Check here for any new messages from support.', time: '1 day ago', details: 'Support messages will be sent here.' },
   ]);
