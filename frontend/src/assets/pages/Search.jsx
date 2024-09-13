@@ -331,13 +331,13 @@ export default function Search() {
 
 
        
-                  <div className='grid grid-cols-2 sm:flex flex-wrap w-full gap-2 justify-center'>
+                  <div className='grid grid-cols-2 sm:flex flex-wrap w-full gap-2 justify-center ml-2 mr-2'>
           {searchListings && searchListings.map((listing, index) => (
             
            
               
          
-            <div key={index} data-aos='zoom-in' className='col-span-1 h-[210px] md:w-[240px] md:h-[250px] mt-1  mx-1 sm:mx-0 sm:ml-0  sm:mr-0 
+            <div key={index} data-aos='zoom-in' className='col-span-1 h-[210px] md:w-[240px] md:h-[250px] mt-1  sm:mx-0 sm:ml-0  sm:mr-0 
             bg-slate-100 rounded-sm shadow-slate-600 shadow-md  overflow-hidden'>
              <img 
                onClick={() => handlegetListing(listing._id)} 
