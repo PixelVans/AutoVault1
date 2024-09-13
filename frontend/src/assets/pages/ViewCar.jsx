@@ -1,7 +1,5 @@
 
 
-
-
 import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,7 +7,7 @@ import SwiperCore from 'swiper'; // Ensure Navigation is imported from SwiperCor
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-
+import Contact from '../../components/Owner';
 // Add custom styles for Swiper arrows
 import '/src/index.css';
 
@@ -51,7 +49,8 @@ export default function ViewCar() {
           {currentUser && listing.owner !== currentUser._id && !contact && (
             <button
               onClick={() => setContact(true)}
-              className='bg-slate-800 text-white rounded-lg uppercase hover:opacity-85 p-2 sm:p-3 w-full mx-auto text-center mt-3 text-[13px] sm:text-[16px] absolute bottom-4 left-1/2 transform -translate-x-1/2'
+              className='bg-slate-800 text-white rounded-lg uppercase hover:opacity-85 p-2 sm:p-3 
+              w-full mx-auto text-center mt-3 text-[13px] sm:text-[16px]  bottom-4 '
             >
               Contact Owner
             </button>
@@ -64,37 +63,42 @@ export default function ViewCar() {
             Vehicle Details
           </h1>
           <hr />
-          <div className='bg-slate-50 px-5 sm:px-9 m-5 grid grid-cols-2 p-2 shadow-black shadow-sm'>
-            <div>
-              <h4 className='p-1 font-bold'>Title</h4>
-              <h4 className='p-1 font-bold'>Brand</h4>
-              <h4 className='p-1 font-bold'>Model</h4>
-              <h4 className='p-1 font-bold'>Year</h4>
-              <h4 className='p-1 font-bold'>Location</h4>
-              <h4 className='p-1 font-bold'>Mileage</h4>
-              <h4 className='p-1 font-bold'>Fuel Type</h4>
-              <h4 className='p-1 font-bold'>Condition</h4>
-              <h4 className='p-1 font-bold'>Transmission</h4>
-              <h4 className='p-1 pl-4 bg-slate-800 rounded-lg rounded-r-none mt-2 font-bold text-white'>
-                Price
-              </h4>
-            </div>
+          <div className='bg-slate-50 px-5 sm:px-9 m-5 p-2 shadow-black shadow-sm'>
+  <div className='grid grid-cols-2 gap-2'>
+   
+    <div className='grid grid-cols-1 gap-y-1'>
+      <h4 className='p-1 font-bold'>Title</h4>
+      <h4 className='p-1 font-bold'>Brand</h4>
+      <h4 className='p-1 font-bold'>Model</h4>
+      <h4 className='p-1 font-bold'>Year</h4>
+      <h4 className='p-1 font-bold'>Location</h4>
+      <h4 className='p-1 font-bold'>Mileage</h4>
+      <h4 className='p-1 font-bold'>Fuel Type</h4>
+      <h4 className='p-1 font-bold'>Condition</h4>
+      <h4 className='p-1 font-bold'>Transmission</h4>
+      <h4 className='p-1 pl-4 bg-slate-800 rounded-lg rounded-r-none mt-2 font-bold text-white'>
+        Price
+      </h4>
+    </div>
 
-            <div>
-              <h4 className='ml-2 p-1'>{listing.title}</h4>
-              <h4 className='ml-2 p-1'>{listing.brand}</h4>
-              <h4 className='ml-2 p-1'>{listing.model}</h4>
-              <h4 className='ml-2 p-1'>{listing.year}</h4>
-              <h4 className='ml-2 p-1'>{listing.location}</h4>
-              <h4 className='ml-2 p-1'>{listing.mileage}</h4>
-              <h4 className='ml-2 p-1'>{listing.fueltype}</h4>
-              <h4 className='ml-2 p-1'>{listing.condition}</h4>
-              <h4 className='ml-2 p-1'>{listing.transmission}</h4>
-              <h4 className='p-1 mt-2 pl-4 text-white font-bold bg-red-600 rounded-lg rounded-l-none'>
-                ${listing.price}
-              </h4>
-            </div>
-          </div>
+    
+    <div className='grid grid-cols-1 gap-y-1'>
+      <h4 className='ml-2 p-1'>{listing.title}</h4>
+      <h4 className='ml-2 p-1'>{listing.brand}</h4>
+      <h4 className='ml-2 p-1'>{listing.model}</h4>
+      <h4 className='ml-2 p-1'>{listing.year}</h4>
+      <h4 className='ml-2 p-1'>{listing.location}</h4>
+      <h4 className='ml-2 p-1'>{listing.mileage} miles</h4>
+      <h4 className='ml-2 p-1'>{listing.fueltype}</h4>
+      <h4 className='ml-2 p-1'>{listing.condition}</h4>
+      <h4 className='ml-2 p-1'>{listing.transmission}</h4>
+      <h4 className='p-1 mt-2 pl-4 text-white font-bold bg-red-600 rounded-lg rounded-l-none'>
+        ${listing.price}
+      </h4>
+    </div>
+  </div>
+</div>
+
 
           <div className='bg-slate-100 mb-4 pb-5 mx-2'>
             <h4 className='p-1 font-bold text-center'>Description</h4>
