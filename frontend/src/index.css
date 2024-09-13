@@ -17,4 +17,18 @@ html, body {
     color: #beb3a8;
   }
 
+
+
+  .swiper-button-next,
+.swiper-button-prev {
+  width: 24px; /* Customize size */
+  height: 24px; /* Customize size */
+  background-size: 16px 16px; /* Customize background size if needed */
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px; /* Customize icon size */
+}
+
  
