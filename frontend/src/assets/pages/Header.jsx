@@ -88,7 +88,7 @@ export default function Header() {
                 </Link>
                     
                 <span className='lg:hidden'>  {hasNotifications && (
-            <span className='ml-1 text-green-400 w-3 h-3'>●</span> // Optional: Add a visual indicator
+            <span className=' text-green-400 w-3 h-3'>●</span> // Optional: Add a visual indicator
           )} </span>
 
                 <form onSubmit={handleSubmit} className=' bg-gray-700 rounded-lg hidden lg:flex sm:w-[350px]'>
