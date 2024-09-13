@@ -18,17 +18,29 @@ html, body {
   }
 
 
-
-  .swiper-button-next,
-.swiper-button-prev {
-  width: 24px; /* Customize size */
-  height: 24px; /* Customize size */
-  background-size: 16px 16px; /* Customize background size if needed */
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 16px; /* Customize icon size */
-}
+.swiper-button-next::after {
+  content: '>';
+  width: 23px; 
+  height: 23px; 
+  font-size: 23px; 
+  line-height: 24px; 
 
  
+  display: inline-block;
+  text-align: center; 
+  color: blue; 
+}
+
+
+.swiper-button-prev::after {
+  content: "<"; 
+  width: 23px; 
+  height: 23px; 
+  font-size: 23px; 
+  line-height: 24px;
+  
+ 
+  display: inline-block; 
+  text-align: center; 
+  color: blue; 
+}
