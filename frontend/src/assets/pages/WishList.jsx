@@ -31,7 +31,8 @@ export default function WishList() {
   };
 
   return (
-    <div className='flex sm:max-w-[1300px] mx-auto mt-5 min-h-screen flex-wrap justify-center'>
+    <main className='min-h-sceen'>
+    <div className='flex sm:max-w-[1300px] mx-auto mt-5  flex-wrap justify-center'>
       {wishlist && wishlist.length === 0 ? (
         <p className='text-center text-gray-800 font-semibold mt-5'>Your wishlist is empty.</p>
       ) : (
@@ -62,6 +63,7 @@ export default function WishList() {
           </div>
         ))
       )}
-    </div>
+      </div>
+      </main>
   );
 }

@@ -13,6 +13,11 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 
 
 export default function HomePage() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
 const wishlist = useSelector((state) => state.user.wishlist);
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated); 
   
