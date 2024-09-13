@@ -16,7 +16,7 @@ export default function HomeRibbon() {
     
    
   return (
-      <div className='md:bg-gray-800 h-[45px] sm:h-[100px] md:h-[43px] md:mt-1 flex flex-wrap w-full'>
+      <div className='md:bg-gray-800  mb-1 sm:mb-0 md:mt-1 flex flex-wrap w-full'>
           <div className='flex md:mx-auto flex-wrap mt-[2px] sm:mt-0 justify-center'>
               
          <Link to={'/sell-car'}>

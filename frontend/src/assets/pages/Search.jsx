@@ -160,9 +160,9 @@ export default function Search() {
   return (
     <div className='flex min-h-screen'>
 
-      
         
-              <div className='bg-gray-800 min-h-screen  w-[450px] hidden lg:flex flex-col shadow-lg shadow-black'>
+        
+              <div className='bg-gray-800 min-h-screen mt-1 min-w-[190px] hidden lg:flex flex-col shadow-lg shadow-black'>
         <div className='border border-gray-700 text-center p-2 bg-slate-900 mb-[20px]'>
           <h1 className='text-gray-400  text-center  font-bold text-[20px] mt-7 mb-[20px]'>Sort Type</h1>
         </div>
@@ -313,18 +313,23 @@ export default function Search() {
         
       <div className=' mx-auto'>
        
-        <div className='flex flex-wrap  w-full justify-center'>
+          <div className='flex flex-wrap  w-full justify-center'>
+            
            
         {loadingCars ? (
-  <h1 className='text-center text-[19px] mx-auto w-full '>Waiting For Results..</h1>
+  <h1 className='text-center text-[19px] lg:mx-5 w-full justify-center '>Waiting For Results..</h1>
 ) : searchListings.length > 0 ? (
-  <h1 className='text-center text-[17px] mx-auto w-full bg-slate-300 font-light mb-1'>Results</h1>
+  <h1 className='text-center text-[17px] lg:mt-1  lg:mx-5 w-full justify-center bg-slate-300 font-light mb-1'>Results</h1>
 ) : (
-  <h1 className='text-center text-[19px] mx-auto w-full text-red-500'>No results Found</h1>
+  <h1 className='text-center text-[19px] justify-center  w-full text-red-500'>No results Found</h1>
 )}
 
         
-                  {loadingCars && <p className='text-center text-[22px] mx-auto w-full'>Loading..</p>}
+            {loadingCars && <p className='text-center text-[22px] mx-auto w-full'>Loading..</p>}
+            
+
+
+
        
                   <div className='grid grid-cols-2 sm:flex flex-wrap w-full gap-2 justify-center'>
           {searchListings && searchListings.map((listing, index) => (
@@ -373,7 +378,7 @@ export default function Search() {
           )}
 
       </div>
-
+      
 
 
 

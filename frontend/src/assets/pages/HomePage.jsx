@@ -133,14 +133,14 @@ const onShowMoreClick = async () => {
 
   return (
     <>
-    <div className='flex min-h-screen relative mt-[-10px] md:mt-[0px]'>
-      <div className='bg-gray-800 h-[90px] w-full absolute z-[-1] md:mt-1 text-center text-slate-300 shadow-md shadow-black'>
-        <h1  data-aos='zoom-in' className='sm:text-[20px] text-[17px] italic mt-3 text-orange-300'>Discover Your Perfect Ride</h1>
+    <div className=' min-h-screen  '>
+      <div className='bg-gray-800 h-[90px] w-full flex flex-col mt-1   text-center text-slate-300 shadow-md shadow-black'>
+        <h1  data-aos='zoom-in' className='sm:text-[20px] text-[17px] italic mt-[20px] text-orange-300'>Discover Your Perfect Ride</h1>
         <h4 className='text-[15px] font-light '>Bonne découverte !</h4>
         </div>
       
-        
-              <div className='bg-gray-800 min-h-screen mt-1 max-w-[470px] hidden lg:flex flex-col shadow-lg'>
+          <main className='flex'>
+              <div className='bg-gray-800 min-h-screen  min-w-[190px] hidden lg:flex flex-col shadow-lg'>
         <div className='border border-gray-700 text-center p-2 bg-slate-900 mb-[20px]'>
           <h1 className='text-gray-400  text-center  font-bold text-[20px] mt-7 mb-[20px]'>Sort Type</h1>
         </div>
@@ -300,13 +300,13 @@ const onShowMoreClick = async () => {
     
       
   
-      <div className=' w-full sm:max-w-[1300px] mx-auto mt-[50px]'>
+      <div className=' w-full sm:max-w-[1300px] mx-auto '>
        
 
         
         <div className='flex flex-wrap  w-full justify-center'>
            
-         <div className='w-full mt-[40px] sm:mt-[50px] p-2'>
+         <div className='w-full  sm:mt-1 p-2'>
             <h1 className='text-center text-[17px] sm:text-[21px] mx-auto w-full bg-slate-100 font-thin'>{loading ? (
               'Loading...'
           ) : 'Featured Listings' }</h1>
@@ -362,7 +362,7 @@ const onShowMoreClick = async () => {
    
       </div>
 
-    
+      </main>
 
         
   
