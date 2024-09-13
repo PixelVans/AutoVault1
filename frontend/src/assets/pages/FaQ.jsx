@@ -17,6 +17,7 @@ function FaQ() {
   };
 
   return (
+    <div className='min-h-screen'>
     <Box sx={{ p: 3 }}>
       <Tabs
         value={tabValue}
@@ -171,7 +172,8 @@ function FaQ() {
           </Box>
         )}
       </Box>
-    </Box>
+      </Box>
+      </div>
   );
 }
 

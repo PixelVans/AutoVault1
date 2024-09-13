@@ -70,7 +70,7 @@ export default function MyListings() {
   }
 
   return (
-    <div>
+    <div className='min-h-screen'>
       {/* Search Input Field */}
       <div className='bg-gray-200 rounded-lg w-[250px] sm:w-[350px] flex mx-auto mt-4'>
         <input

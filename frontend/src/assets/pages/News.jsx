@@ -21,6 +21,7 @@ export default function News() {
   };
 
   return (
+    <div className='min-h-screen'>
     <Box sx={{ p: 3, textAlign: 'center' }}>
       <Typography 
         variant="h4" 
@@ -70,5 +71,6 @@ export default function News() {
         </Table>
       </TableContainer>
     </Box>
+    </div>
   );
 }

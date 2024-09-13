@@ -69,9 +69,9 @@ export default function Header() {
 <div className='relative mx-2 z-0 block lg:hidden'>
           {!isMenuOpen && (
             <div onClick={toggleMenu} className='block lg:hidden cursor-pointer'>
-              <div className='h-[2px] w-[23px] bg-slate-500 my-1'></div>
-              <div className='h-[2px] w-[23px] bg-slate-500 my-1'></div>
-              <div className='h-[2px] w-[23px] bg-slate-500 my-1'></div>
+              <div className='h-[2px] w-[23px] bg-slate-400 my-1'></div>
+              <div className='h-[2px] w-[23px] bg-slate-400 my-1'></div>
+              <div className='h-[2px] w-[23px] bg-slate-400 my-1'></div>
             </div>
           )}
         </div>
