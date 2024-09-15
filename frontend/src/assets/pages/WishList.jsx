@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeFromWishlist, viewListing } from '../../../redux/userSlice';
 import { useNavigate } from 'react-router-dom';
 import { AiOutlineClose } from 'react-icons/ai';
-
+import { toast } from 'react-toastify'; 
 export default function WishList() {
   const wishlist = useSelector(state => state.user.wishlist);
   const dispatch = useDispatch();
@@ -16,17 +16,17 @@ export default function WishList() {
       dispatch(viewListing(data));
       navigate(`/view/listing/${data._id}`);
     } catch (error) {
-      alert('Error showing vehicle');
+      
     }
   };
 
   const handleRemoveFromWishlist = (id) => {
-    // Show a confirmation dialog
-    const isConfirmed = window.confirm("Are you sure you want to remove this item from your wishlist?");
-    
-    // If confirmed, dispatch the action to remove the item
-    if (isConfirmed) {
-      dispatch(removeFromWishlist(id));
+    // Create a custom confirmation dialog (you can replace this with a custom modal in the future)
+    if (window.confirm('Are you sure you want to remove this item from your wishlist?')) {
+      dispatch(removeFromWishlist(id)); // Dispatch the action to remove the item
+      toast.success('Item removed from your wishlist'); // Notify user
+    } else {
+      toast.info('Action canceled'); // Notify user if they cancel the removal
     }
   };
 

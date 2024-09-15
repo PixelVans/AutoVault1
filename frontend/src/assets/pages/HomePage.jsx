@@ -8,7 +8,7 @@ import { useDispatch ,useSelector} from 'react-redux';
 import { addToWishlist, viewListing ,removeFromWishlist} from '../../../redux/userSlice';
 import { FaHeart } from 'react-icons/fa';
 import { FaMapMarkerAlt } from 'react-icons/fa';
-
+import { toast } from 'react-toastify'; 
 
 
 
@@ -84,14 +84,17 @@ const onShowMoreClick = async () => {
 
   const handleToggleWishlist = (listing) => {
     if (!isAuthenticated) {
-      alert('You need to sign-in to manage your wishlist.');
+      toast.info('You need to sign-in to manage your wishlist.');
       return;
     }
 
     if (isListingInWishlist(listing._id)) {
       dispatch(removeFromWishlist(listing._id)); // Dispatch action to remove from wishlist
+      toast.info('removed from wishlist');
     } else {
-      dispatch(addToWishlist(listing)); // Dispatch action to add to wishlist
+      dispatch(addToWishlist(listing));
+      toast.info(' Added to wishlist');
+      // Dispatch action to add to wishlist
     }
   };
   

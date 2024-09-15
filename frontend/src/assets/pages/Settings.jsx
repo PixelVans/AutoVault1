@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-
+import { toast } from 'react-toastify'; 
 export default function Settings() {
   const [suggestion, setSuggestion] = useState('');
 
   const handleSuggestionSubmit = () => {
-    alert(`Thank you for your suggestion: ${suggestion}`);
+    toast.info(`Thank you for your suggestion: ${suggestion}`);
     setSuggestion(''); // Clear input after submission
   };
 

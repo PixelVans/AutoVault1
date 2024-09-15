@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-
+import { toast } from 'react-toastify'; 
 import { useDispatch ,useSelector} from 'react-redux';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa';
@@ -141,7 +141,7 @@ export default function Search() {
 
   const handleToggleWishlist = (listing) => {
     if (!isAuthenticated) {
-      alert('You need to sign-in to manage your wishlist.');
+    toast.info('You need to sign-in to manage your wishlist.');
       return;
     }
 

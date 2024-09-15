@@ -6,6 +6,7 @@ import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { removeListing } from '../../../redux/userSlice';
 import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify'; 
 
 export default function MyListings() {
   const myListings = useSelector(state => state.user.myListings);
@@ -42,6 +43,7 @@ export default function MyListings() {
         
         if (data.success === false) {
           setdeleteMessage(data.message);
+          
           return;
         }
   
@@ -51,8 +53,8 @@ export default function MyListings() {
           prev.filter((listing) => listing._id !== listingId)
         );
         
-        // Alert the user that the listing has been deleted
-        alert("The listing has been successfully deleted.");
+        // the user that the listing has been deleted
+        
         
       } catch (error) {
         console.log(error);
