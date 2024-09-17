@@ -165,7 +165,7 @@ export const getOwner = async (req, res, next) => {
 }
 
 export const reserve = async (req, res) => {
-    const stripe = Stripe('sk_test_51Pz6WERoTuW6EzfZjwFKlUmITeYkGdUZvivuvJGYhgQrdkbpHf5d828JqDADSgUEqgQWdmZkkFxNdb5xt3yXavFi004Vt844yM'); 
+    const stripe = Stripe(process.env.STRIPE_SECRET_KEY); 
     const { products } = req.body;
    
     // Map products to line items
