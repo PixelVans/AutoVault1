@@ -13,7 +13,7 @@ const Failure = () => {
           Something went wrong with your transaction. <br />Please try again or contact support for assistance.
         </p>
         <a
-          href="/"
+          href="/home"
           className="inline-block px-3 py-2 lg:px-6 lg:py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700"
         >
           Go to Homepage

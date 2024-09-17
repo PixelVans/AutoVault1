@@ -26,7 +26,7 @@ const Success = () => {
           If you have any questions in the meantime, feel free to reach out to us.
         </p>
         <a
-          href="/"
+          href="/home"
           className="inline-block px-3 py-2 lg:px-6 lg:py-3 bg-slate-900 text-white font-semibold rounded-lg hover:bg-green-700"
         >
           Go to Homepage
