@@ -1,4 +1,5 @@
 import User from "../models/userModel.js"
+import Stripe from "stripe";
 import CarListing from "../models/ListingModel.js"
 import { errorHandler } from "../utilities/error.js"
 import mongoose from 'mongoose';
@@ -162,6 +163,39 @@ export const getOwner = async (req, res, next) => {
       }
 
 }
+
+export const reserve = async (req, res) => {
+    const stripe = Stripe(process.env.STRIPE_SECRET_KEY); 
+    const { products } = req.body;
+   
+    // Map products to line items
+    const lineItems = products.map((product) => ({
+      price_data: {
+        currency: 'usd',
+        product_data: {
+          name: product.name,
+          images: [product.image],
+        },
+        unit_amount: product.price * 100, // Stripe uses cents
+      },
+      quantity: 1,
+    }));
+  
+    try {
+      // Create a checkout session
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        line_items: lineItems,
+        mode: 'payment',
+        success_url: 'http://localhost:5000/success', // Replace with your success URL
+        cancel_url: 'http://localhost:5000/failure', // Replace with your cancel URL
+      });
+  
+      res.json({ id: session.id });
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  };
 
 
 

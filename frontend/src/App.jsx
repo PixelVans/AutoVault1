@@ -149,6 +149,8 @@ import LandingPage from './assets/pages/LandingPage';
 import Footer from './components/Footer';
 import { updateNotifications } from '../redux/userSlice';
 import { useDispatch } from 'react-redux';
+import Success from './assets/pages/Success';
+import Failure from './assets/pages/Failure';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -183,6 +185,8 @@ export default function App() {
         <Route path="/listing/:listingId" element={<Listing />} />
         <Route path="/search" element={<Search />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/failure" element={<Failure />} />
         {/* Protected routes */}
         <Route element={<PrivateRoute />}>
           <Route path="/my-listings" element={<MyListings />} />

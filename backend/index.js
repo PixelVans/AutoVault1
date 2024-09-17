@@ -1,10 +1,11 @@
 import express from 'express'
-
+import cors from 'cors'
 import cookieParser from 'cookie-parser'
 // Middleware to parse cookies
 import path from 'path'
 
 const app = express();
+app.use(cors());
 import mongoose from 'mongoose'
 app.use(express.json());
 import dotenv from 'dotenv';
@@ -16,6 +17,7 @@ app.use(cookieParser());
 app.use("/auth/user", userRouter)
 app.use("/auth/user", authRouter)
 app.use("/auth/get", publicRoutes)
+
 
 
 

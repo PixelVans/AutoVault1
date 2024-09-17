@@ -2,8 +2,9 @@
 
 import { React, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { loadStripe } from '@stripe/stripe-js'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore from 'swiper'; // Ensure Navigation is imported from SwiperCore
+import  SwiperCore from 'swiper'; // Ensure Navigation is imported from SwiperCore
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -22,7 +23,47 @@ export default function ViewCar() {
 
   const listing = useSelector((state) => state.user.listing);
   const currentUser = useSelector((state) => state.user.userData);
+  const [isProcessing, setIsProcessing] = useState(false); // Loading state
   const [contact, setContact] = useState(false);
+   const reservationPrice = listing.price * 0.20; // 20% of the price
+ 
+  
+  const makePayment = async () => {
+    setIsProcessing(true); // Set processing to true when payment starts
+
+    const stripe = await loadStripe('pk_test_51Pz6WERoTuW6EzfZMfdekxghKcp4HeLFpylRthgBdNLRu7HOOFasCgsWxBHtBxz5VLgkJNYVqIqYSMPQ0nPUVMU500iSvuZ0et');
+    
+    const cart = [{ name: listing.title, price: reservationPrice, image: listing.images[0] }];
+
+    console.log(cart)
+    const body = { products: cart };
+    const headers = { "Content-Type": "application/json" };
+
+    try {
+      const response = await fetch(`/auth/user/reserve`, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(body)
+      });
+
+      const session = await response.json();
+      const result = await stripe.redirectToCheckout({
+        sessionId: session.id
+      });
+
+      if (result.error) {
+        console.log(result.error);
+        setIsProcessing(false);
+      }
+    } catch (error) {
+      setIsProcessing(false);
+      console.log('Payment error: ', error);
+    } finally {
+      setIsProcessing(false); // Set processing to false after payment process ends
+    }
+  };
+
+
 
   return (
     <main className='max-w-[1200px] mx-auto p-2 h-full shadow-md shadow-gray-900 mt-4'>
@@ -47,13 +88,21 @@ export default function ViewCar() {
 
           {/* Contact button outside Swiper */}
           {currentUser && listing.owner !== currentUser._id && !contact && (
+            <div className='flex  lg:gap-1'>
             <button
               onClick={() => setContact(true)}
-              className='bg-slate-800 text-white rounded-lg uppercase hover:opacity-85 p-2 sm:p-3 
-              w-full mx-auto text-center mt-3 text-[13px] sm:text-[16px]  bottom-4 '
+              className='bg-slate-800 text-white rounded-lg rounded-r-none uppercase hover:opacity-85 p-2 sm:p-3 
+             w-full mx-auto text-center mt-3 text-[13px] sm:text-[16px]  bottom-4 '
             >
               Contact Owner
-            </button>
+              </button>
+              <button
+                onClick={makePayment}
+                className='bg-green-700 text-white rounded-lg rounded-l-none  uppercase hover:opacity-85 p-2 sm:p-3 
+              w-full mx-auto text-center mt-3 text-[13px] sm:text-[16px]  bottom-4  border border-slate-900'>
+                {isProcessing ? 'Processing...' : `Reserve for $${reservationPrice }`}
+              </button>
+            </div>
           )}
           {contact && <Contact listing={listing} />}
         </div>
