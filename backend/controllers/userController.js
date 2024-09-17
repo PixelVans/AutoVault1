@@ -187,8 +187,8 @@ export const reserve = async (req, res) => {
         payment_method_types: ['card'],
         line_items: lineItems,
         mode: 'payment',
-        success_url: 'http://localhost:5000/success', // Replace with your success URL
-        cancel_url: 'http://localhost:5000/failure', // Replace with your cancel URL
+        success_url: 'https://autovault1.onrender.com/success', // Replace with your success URL
+        cancel_url: 'https://autovault1.onrender.com/failure', // Replace with your cancel URL
       });
   
       res.json({ id: session.id });
