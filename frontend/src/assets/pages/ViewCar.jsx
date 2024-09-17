@@ -9,6 +9,7 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Contact from '../../components/Owner';
+import { toast } from 'react-toastify'; 
 // Add custom styles for Swiper arrows
 import '/src/index.css';
 
@@ -21,6 +22,14 @@ export default function ViewCar() {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    // Cleanup function that runs when component unmounts
+    return () => {
+      setIsProcessing(false);
+    };
+  }, []);
+  
+
   const listing = useSelector((state) => state.user.listing);
   const currentUser = useSelector((state) => state.user.userData);
   const [isProcessing, setIsProcessing] = useState(false); // Loading state
@@ -30,7 +39,11 @@ export default function ViewCar() {
   
   const makePayment = async () => {
     setIsProcessing(true); // Set processing to true when payment starts
-
+    if (currentUser && listing.owner == currentUser._id) {
+      toast.info('You are the Owner of this vehicle');
+      setIsProcessing(false);
+      return
+     }
     const stripe = await loadStripe('pk_test_51Pz6WERoTuW6EzfZMfdekxghKcp4HeLFpylRthgBdNLRu7HOOFasCgsWxBHtBxz5VLgkJNYVqIqYSMPQ0nPUVMU500iSvuZ0et');
     
     const cart = [{ name: listing.title, price: reservationPrice, image: listing.images[0] }];
