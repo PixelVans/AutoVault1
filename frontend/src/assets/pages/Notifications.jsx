@@ -38,6 +38,7 @@ export default function Notifications() {
   };
 
   return (
+    <main className='min-h-screen'>
     <Box 
       sx={{ 
         p: 3, 
@@ -125,6 +126,7 @@ export default function Notifications() {
           </Typography>
         )}
       </Box>
-    </Box>
+      </Box>
+      </main>
   );
 }

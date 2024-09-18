@@ -8,7 +8,8 @@ import {
  } from 'react-icons/fa'
  import { AiOutlineMail } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-
+import Map from '../assets/pages/Map';
+import '../index.css';
  const FooterLinks = [
     {
         title: 'Home',
@@ -17,6 +18,17 @@ import { Link } from 'react-router-dom';
     {
         title: 'About',
         links: '/about'
+      },
+    
+    {
+        title: 'Help',
+        links: '/help'
+      },
+    
+   
+    {
+        title: 'FAQ',
+        links: '/faq'
       },
     
     
@@ -40,24 +52,23 @@ export default function Footer() {
     return (
     
     <div 
-      className='text-black  mb-2 bg-slate-100 mt-[100px]  shadow-top'>
-          <div className=''>  
+      className='text-black   bg-slate-100 mt-[100px]  shadow-top'>
+            <div className=''>  
+                
+                
               {/* company details */}
               <div
                   data-aos='zoom-in'
-                  className='grid md:grid-cols-3 pb-[35px] pt-5'>
+                  className='grid md:grid-cols-3 pb-[35px] pt-4'>
                   
              
-              <div className='py-2 sm:py-8 px-4'>
+              <div className='ml-5  py-1 sm:py- text-center w-full mx-auto'>
                       <h1 className='sm:text-2xl text-xl font-bold sm:text-left 
-                      text-justify mb-3 flex items-center gap-3'>
+                      text-justify  flex items-center gap-3 '>
                          
-                          AutoVault</h1>
-                      <p className='font-extralight'>
-                          AutoVault simplifies buying and selling cars.
-                          Our platform offers an easy and efficient way to find your next vehicle or list your own.
-                          Experience a seamless transaction process and discover a diverse range of cars with AutoVault.
-                  </p>
+                          Location</h1>
+                      
+                        <Map/>
               </div>
                   {/* footer links */}
                   <div className='grid grid-cols-2 sm:grid-cols-3 col-span-2 md:pl-10'>
@@ -104,13 +115,17 @@ export default function Footer() {
                                   < FaMobileAlt className=''/>
                                   <p>+254 101897909</p>
                               </div>
+                              <div className='flex items-center gap-3 mt-3 '>
+                                  < FaMobileAlt className=''/>
+                                  <p>+254 794952257</p>
+                              </div>
                           </div>
                       </div>
                       
 
                       <div className='mt-6 px-4 sm:px-0'>
                           <h1 className='font-bold'>Website Powered by</h1>
-                          <p>PixelVans</p>
+                          <p className='italic font-light'>PixelVans</p>
                           <div className='flex items-center gap-3 mt-3'>
                                   < FaMobileAlt />
                                   <p>+254 101897909</p>

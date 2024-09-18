@@ -34,7 +34,8 @@ export default function ViewCar() {
   const currentUser = useSelector((state) => state.user.userData);
   const [isProcessing, setIsProcessing] = useState(false); // Loading state
   const [contact, setContact] = useState(false);
-   const reservationPrice = listing.price * 0.20; // 20% of the price
+  const reservationPrice = (listing.price * 0.20).toFixed(2);
+  // 20% of the price
  
   
   const makePayment = async () => {
